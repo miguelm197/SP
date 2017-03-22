@@ -27,6 +27,6 @@ public class cargarCuotas extends ApiaAbstractClass {
 		tipos.addPossibleValues(pos1);
 		tipos.addPossibleValues(pos2);
 	
-		//hola
+		//hola miguel
 	}
 }
