@@ -20,6 +20,18 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 	protected void executeClass() throws BusClassException {
 		// currEnt.getAttribute("").clear();
 
+		
+		
+		
+		
+		
+		//HOLA MAITE
+		
+		
+		
+		
+		
+		
 		Entity currEnt = this.getCurrentEntity();
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
 		String iva = currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").getValueAsString();
