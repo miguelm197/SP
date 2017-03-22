@@ -89,7 +89,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 									+ "		Comentario Administración: " + comentarioDir + " <br>"
 									+ "------------------------------------------------------------------------------ <br><br>"
 
-									+ "Atte: El Gato con Botas!");
+									+ "Saludos, Apia :)");
 				}
 			}
 
@@ -116,7 +116,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 									+ "     Compra: " + titulo + "<br>" + "     Tipo: " + tipo + "<br>"
 									+ "     Solicitante: " + solicitante + "<br>"
 									+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>" + "     Proveedor: "
-									+ proveedor + "<br>" + "     Monto: " + monto + " " + moneda + "<br>"
+									+ proveedor + "<br>" + "     Monto: " + monto + "(Incluye IVA) " + moneda + "<br>"
 									+ "     Cumplimiento: " + cumplimiento + "<br>" + "     Comentario: " + comentario
 									+ " <br><br>"
 									+ "------------------------------------------------------------------------------ <br><br>"
