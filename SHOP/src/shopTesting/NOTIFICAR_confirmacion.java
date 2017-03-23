@@ -56,7 +56,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 								"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por "
 										+ solicitante + " ha sido aprobada correctamente. <br><br>"
 
-										+ "Saludos, Apia :)");
+										+ "Saludos, Apia");
 					}
 				}
 			}
@@ -81,7 +81,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 										+ "Confirmamos que los presupuestos de la compra solicitada por " + solicitante
 										+ " ha sido rechazada <br><br>"
 
-										+ "Saludos, Apia :)");
+										+ "Saludos, Apia");
 					}
 				}
 			}
@@ -104,7 +104,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 								"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por "
 										+ solicitante + " ha sido puesta en espera hasta nuevo aviso <br><br>"
 
-										+ "Saludos, Apia :)");
+										+ "Saludos, Apia");
 					}
 				}
 			}
@@ -128,7 +128,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 								"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por "
 										+ solicitante + " ha sido cancelada. <br><br>"
 
-										+ "Saludos, Apia :)");
+										+ "Saludos, Apia");
 					}
 				}
 			}

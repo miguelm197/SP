@@ -44,7 +44,7 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
 									+ " ha sido finalizada correctamente. <br><br>"
 
-									+ "Saludos, Maite :)");
+									+ "Saludos, Apia");
 				}
 			}
 		}

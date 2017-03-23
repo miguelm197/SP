@@ -44,7 +44,7 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
 									+ " ha sido retornada correctamente. <br><br>" 
 									
-									+ "Saludos, Apia :)");
+									+ "Saludos, Apia");
 				}
 			}
 		}

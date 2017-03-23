@@ -45,7 +45,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
 									+ " ha sido solicitada correctamente. <br><br>"
 
-									+ "Saludos, Maite :)");
+									+ "Saludos, Apia");
 				}
 			}
 		}

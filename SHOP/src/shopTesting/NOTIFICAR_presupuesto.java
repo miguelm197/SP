@@ -92,13 +92,13 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 										+ "		Comentario Administración: " + comentarioDir + " <br>"
 										+ "------------------------------------------------------------------------------ <br><br>"
 
-										+ "Atte: El Gato con Botas!");
+										+ "Saludos, Apia");
 					}
 				}
 			}
 
 		} else {
-if (notificarPresupuesto){
+			if (notificarPresupuesto) {
 				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
 				Collection<User> usuarios = null;
 
@@ -125,11 +125,10 @@ if (notificarPresupuesto){
 										+ comentario + " <br><br>"
 										+ "------------------------------------------------------------------------------ <br><br>"
 
-										+ "Atte: El Gato con Botas!");
+										+ "Saludos, Apia");
 					}
 				}
-}
-		
+			}
 
 		}
 
