@@ -41,7 +41,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 			String monto = currEnt.getAttribute("SH_MONTO_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String moneda = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
-			Document pdf = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
+			//Document pdf = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
 
 			boolean bandera = true;
 			double mon;
@@ -89,11 +89,11 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				Collection come = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 				come.add(comentario);
 				
-				Collection pdfc = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").getDocumentValues();
-				ArrayList<Document> nombre = new ArrayList<>();
-				nombre.addAll(pdfc);
+//				Collection pdfc = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").getDocumentValues();
+//				ArrayList<Document> nombre = new ArrayList<>();
+//				nombre.addAll(pdfc);
 				
-				nombre.add(pdf);
+				//nombre.add(pdf);
 
 				// Se setean (cargan) las nuevas colecciones a los atributos
 				// de
@@ -105,14 +105,14 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").setValues(mone);
 				currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(come);
 				currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").setValue("Con IVA");
-				this.addMessage("download: " + pdf.download());
-				this.addMessage("type: " + pdf.getType());
-				this.addMessage("path: " + pdf.getPath());
+//				this.addMessage("download: " + pdf.download());
+//				this.addMessage("type: " + pdf.getType());
+//				this.addMessage("path: " + pdf.getPath());
 				
 				
 //				for (Document doc:nombre) {
 //					this.addMessage(doc.getPath());
-				currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").setValue(pdf);
+			//	currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").setValue(pdf);
 					//currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").addDocument(pdf.getPath(), "doc.pdf", "", false);
 				//}
 //				currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").setValues(nombre);
