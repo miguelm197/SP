@@ -24,13 +24,13 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 
 		String titulo = currEnt.getAttribute("SH_TITULO_INGRESO_COMPRA_STR").getValueAsString();
 		String solicitante = currEnt.getAttribute("SH_SOLICITANTE_INGRESO_COMPRA_STR").getValueAsString();
-
-		boolean notificar = true;
-
-		String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+	
+		boolean notificar=true;
+		
+		String[] gruposNotificar = { "ADMINISTRACION_TESTING"};
 		Collection<User> usuarios = null;
 
-		if (notificar) {
+		if (notificar){
 			for (int i = 0; i < gruposNotificar.length; i++) {
 				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
 			}
@@ -40,11 +40,11 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "ADMINISTRACION, DIRECCION_Se retornó la compra " + titulo,
+					this.sendMail(mailEnviar, "ADMINISTRACION, DIRECCION_Se retornó la compra "  + titulo ,
 							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-									+ " ha sido retornada correctamente. <br><br>"
-
-									+ "Saludos, Maite :)");
+									+ " ha sido retornada correctamente. <br><br>" 
+									
+									+ "Saludos, Apia :)");
 				}
 			}
 		}
