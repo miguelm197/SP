@@ -59,69 +59,74 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
 
+		boolean notificarPresupuesto = false;
+		boolean notificarAprobacion = true;
+
 		if (envDir.equals("true")) {
 			// ENVIO A DIRECCION
 
-			String[] gruposNotificar = { "DIRECCION_TESTING" };
-			Collection<User> usuarios = null;
+			if (notificarAprobacion) {
+				String[] gruposNotificar = { "DIRECCION_TESTING" };
+				Collection<User> usuarios = null;
 
-			for (int i = 0; i < gruposNotificar.length; i++) {
-				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-			}
+				for (int i = 0; i < gruposNotificar.length; i++) {
+					usuarios = this.getGroup(gruposNotificar[i]).getUsers();
+				}
 
-			for (User u : usuarios) {
-				String mail = u.getEmail();
-				if (mail.compareTo("") != 0) {
-					String[] mailEnviar = { mail };
-					
-					this.sendMail(mailEnviar, "DIRECCION_Se ingresó una nueva compra "  + titulo,
-							"Hola Marcos o José, <br> <br>" + "Le notificamos que tiene una compra para aprobar. <br><br>"
-									+ "Información de la compra: <br>"
+				for (User u : usuarios) {
+					String mail = u.getEmail();
+					if (mail.compareTo("") != 0) {
+						String[] mailEnviar = { mail };
 
-									+ "------------------------------------------------------------------------------ <br>"
-									+ "		Titulo: " + titulo + "<br>" 
-									+ "		Tipo: " + tipo + "<br>"
-									+ "		Solicitante: " + solicitante + "<br>" 
-									+ "		Fecha estimada: "+ fechaEstimada + "<br>" 
-									+ "		Descripcion: " + descripcion + "<br>"
-									+ "		Comentario: " + comentario + " <br>"
-									+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>" 
-									+ "		Comentario Administración: " + comentarioDir + " <br>"
-									+ "------------------------------------------------------------------------------ <br><br>"
+						this.sendMail(mailEnviar, "DIRECCION_Se ingresó una nueva compra " + titulo,
+								"Hola Marcos o José, <br> <br>"
+										+ "Le notificamos que tiene una compra para aprobar. <br><br>"
+										+ "Información de la compra: <br>"
 
-									+ "Atte: El Gato con Botas!");
+										+ "------------------------------------------------------------------------------ <br>"
+										+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
+										+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
+										+ fechaEstimada + "<br>" + "		Descripcion: " + descripcion + "<br>"
+										+ "		Comentario: " + comentario + " <br>"
+										+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>"
+										+ "		Comentario Administración: " + comentarioDir + " <br>"
+										+ "------------------------------------------------------------------------------ <br><br>"
+
+										+ "Atte: El Gato con Botas!");
+					}
 				}
 			}
 
 		} else {
+			if (notificarPresupuesto) {
+				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+				Collection<User> usuarios = null;
 
-			String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
-			Collection<User> usuarios = null;
+				for (int i = 0; i < gruposNotificar.length; i++) {
+					usuarios = this.getGroup(gruposNotificar[i]).getUsers();
+				}
 
-			for (int i = 0; i < gruposNotificar.length; i++) { 
-				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-			}
+				for (User u : usuarios) {
+					String mail = u.getEmail();
+					if (mail.compareTo("") != 0) {
+						String[] mailEnviar = { mail };
 
-			for (User u : usuarios) {
-				String mail = u.getEmail();
-				if (mail.compareTo("") != 0) {
-					String[] mailEnviar = { mail };
+						this.sendMail(mailEnviar, "ADMINISTRACION_Se ingresó un nuevo Presupuesto " + titulo,
+								"Hola Karen, <br> <br>"
+										+ "Confirmamos que el nuevo presupuesto fue ingresado correctamente. <br><br>"
+										+ "Información del presupuesto: <br>"
 
-					this.sendMail(mailEnviar, "ADMINISTRACION_Se ingresó un nuevo Presupuesto "  + titulo,
-							"Hola Karen, <br> <br>"
-									+ "Confirmamos que el nuevo presupuesto fue ingresado correctamente. <br><br>"
-									+ "Información del presupuesto: <br>"
+										+ "------------------------------------------------------------------------------ <br>"
+										+ "     Compra: " + titulo + "<br>" + "     Tipo: " + tipo + "<br>"
+										+ "     Solicitante: " + solicitante + "<br>"
+										+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>" + "     Proveedor: "
+										+ proveedor + "<br>" + "     Monto: " + monto + " " + moneda + "<br>"
+										+ "     Cumplimiento: " + cumplimiento + "<br>" + "     Comentario: "
+										+ comentario + " <br><br>"
+										+ "------------------------------------------------------------------------------ <br><br>"
 
-									+ "------------------------------------------------------------------------------ <br>"
-									+ "     Compra: " + titulo + "<br>" + "     Tipo: " + tipo + "<br>"
-									+ "     Solicitante: " + solicitante + "<br>"
-									+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>" + "     Proveedor: "
-									+ proveedor + "<br>" + "     Monto: " + monto + " " + moneda + "<br>"
-									+ "     Cumplimiento: " + cumplimiento + "<br>" + "     Comentario: " + comentario
-									+ " <br><br>"
-									+ "------------------------------------------------------------------------------ <br><br>"
-
-									+ "Atte: El Gato con Botas!");
+										+ "Atte: El Gato con Botas!");
+					}
 				}
 			}
 

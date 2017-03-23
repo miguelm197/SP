@@ -33,31 +33,34 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 		String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
 		Collection<User> usuarios = null;
 
-		for (int i = 0; i < gruposNotificar.length; i++) {
-			usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-		}
+		boolean notificar = false;
 
-		for (User u : usuarios) {
-			String mail = u.getEmail();
-			if (mail.compareTo("") != 0) {
-				String[] mailEnviar = { mail };
-
-				this.sendMail(mailEnviar, "ADMINISTRACION_Se agregó una nueva compra "  + titulo ,
-						"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-								+ " se ha ingresado correctamente. <br><br>" 
-								+ "Información de la compra: <br>"
-
-								+ "---------------------------------------------------------- <br>" 
-								+ "		Titulo: " + titulo + "<br>" 
-								+ "		Tipo: " + tipo + "<br>" 
-								+ "		Solicitante: " + solicitante + "<br>"
-								+ "		Fecha estimada: " + fechaEstimada + "<br>" 
-								+ "		Descripcion: " + descripcion + "<br>"
-								+ "		Comentario: " + comentario + " <br><br>"
-								+ "---------------------------------------------------------- <br><br>"
-
-								+ "Saludos, Maite :)");
+		if (notificar) {
+			for (int i = 0; i < gruposNotificar.length; i++) {
+				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
 			}
+
+			for (User u : usuarios) {
+				String mail = u.getEmail();
+				if (mail.compareTo("") != 0) {
+					String[] mailEnviar = { mail };
+
+					this.sendMail(mailEnviar, "ADMINISTRACION_Se agregó una nueva compra " + titulo,
+							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
+									+ " se ha ingresado correctamente. <br><br>" + "Información de la compra: <br>"
+
+									+ "---------------------------------------------------------- <br>"
+									+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
+									+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
+									+ fechaEstimada + "<br>" + "		Descripcion: " + descripcion + "<br>"
+									+ "		Comentario: " + comentario + " <br><br>"
+									+ "---------------------------------------------------------- <br><br>"
+
+									+ "Saludos, Maite :)");
+				}
+			}
+
 		}
+
 	}
 }

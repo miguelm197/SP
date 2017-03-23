@@ -24,26 +24,31 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 
 		String titulo = currEnt.getAttribute("SH_TITULO_INGRESO_COMPRA_STR").getValueAsString();
 		String solicitante = currEnt.getAttribute("SH_SOLICITANTE_INGRESO_COMPRA_STR").getValueAsString();
-	
-		String[] gruposNotificar = { "ADMINISTRACION_TESTING", "DIRECCION_TESTING"};
-		Collection<User> usuarios = null;
 
-		for (int i = 0; i < gruposNotificar.length; i++) {
-	
-			usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-		}
+		boolean notificar = false;
 
-		for (User u : usuarios) {
-			String mail = u.getEmail();
-			if (mail.compareTo("") != 0) {
-				String[] mailEnviar = { mail };
+		if (notificar) {
+			String[] gruposNotificar = { "ADMINISTRACION_TESTING", "DIRECCION_TESTING" };
+			Collection<User> usuarios = null;
 
-				this.sendMail(mailEnviar, "ADMINISTRACION, DIRECCION_Se solicitó la compra "  + titulo ,
-						"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-								+ " ha sido solicitada correctamente. <br><br>" 
-								
-								+ "Saludos, Maite :)");
+			for (int i = 0; i < gruposNotificar.length; i++) {
+
+				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
+			}
+
+			for (User u : usuarios) {
+				String mail = u.getEmail();
+				if (mail.compareTo("") != 0) {
+					String[] mailEnviar = { mail };
+
+					this.sendMail(mailEnviar, "ADMINISTRACION, DIRECCION_Se solicitó la compra " + titulo,
+							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
+									+ " ha sido solicitada correctamente. <br><br>"
+
+									+ "Saludos, Maite :)");
+				}
 			}
 		}
+
 	}
 }
