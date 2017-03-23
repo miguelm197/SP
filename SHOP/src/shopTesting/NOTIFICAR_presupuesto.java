@@ -120,7 +120,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 										+ "     Compra: " + titulo + "<br>" + "     Tipo: " + tipo + "<br>"
 										+ "     Solicitante: " + solicitante + "<br>"
 										+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>" + "     Proveedor: "
-										+ proveedor + "<br>" + "     Monto: " + monto + " " + moneda + "<br>"
+										+ proveedor + "<br>" + "     Monto: " + monto + " " + moneda + " (Incluye IVA)" + "<br>"
 										+ "     Cumplimiento: " + cumplimiento + "<br>" + "     Comentario: "
 										+ comentario + " <br><br>"
 										+ "------------------------------------------------------------------------------ <br><br>"
