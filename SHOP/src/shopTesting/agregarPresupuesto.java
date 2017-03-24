@@ -28,6 +28,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
 		String iva = currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").getValueAsString();
 		String suma = currEnt.getAttribute("SH_MONTO_MAS_IVA_PRESUPUESTOS_STR").getValueAsString();
+		
 
 		if (envDir.equals("false")) {
 			if (iva.equals("Sin IVA")) {
@@ -41,7 +42,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 			String monto = currEnt.getAttribute("SH_MONTO_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String moneda = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
-			//Document pdf = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
+		//	Document pdf = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
 
 			boolean bandera = true;
 			double mon;
@@ -89,6 +90,12 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				Collection come = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 				come.add(comentario);
 				
+				
+	
+				
+				 Document d = this.getCurrentEntity().getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
+			        String temporalPath = d.download();
+			        this.getCurrentEntity().getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").addDocument(temporalPath, d.getName(), d.getDescription(), false);
 //				Collection pdfc = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").getDocumentValues();
 //				ArrayList<Document> nombre = new ArrayList<>();
 //				nombre.addAll(pdfc);
@@ -105,6 +112,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").setValues(mone);
 				currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(come);
 				currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").setValue("Con IVA");
+				//currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").addDocument(path, pdf.getName(), pdf.getDescription(), false);
 //				this.addMessage("download: " + pdf.download());
 //				this.addMessage("type: " + pdf.getType());
 //				this.addMessage("path: " + pdf.getPath());
@@ -126,20 +134,26 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 			Collection favs = this.getCurrentEntity().getAttribute("SH_FAVORITOADMIN_PRESUPUESTO_INFO_STR").getValues();
 			ArrayList favoritos = new ArrayList();
 			favoritos.addAll(favs);
+			
+			Collection comentarios = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
+
+			
 			int cont = 0;
 
 			for (int i = 0; i < favoritos.size(); i++) {
-
 				if (favoritos.get(i).toString().compareTo("true") == 0) {
 					cont = cont + 1;
-
 				}
 			}
 
 			if (cont == 0) {
 				throw new BusClassException("Debe seleccionar al menos 1 favorito");
 			}
-
+			String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
+			Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
+			chat.add(comentario);
+			currEnt.getAttribute("SH_CHAT_STR").setValues(chat);
+			
 			currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").setValue("Avanzar");
 		}
 	}

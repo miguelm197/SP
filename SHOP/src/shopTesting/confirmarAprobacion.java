@@ -73,15 +73,17 @@ public class confirmarAprobacion extends ApiaAbstractClass {
 					int cont = 0;
 
 					for (int i = 0; i < favoritos.size(); i++) {
-
 						if (favoritos.get(i).toString().compareTo("true") == 0) {
 							cont = cont + 1;
-
 						}
 					}
 
 					if (cont != 1) {
 						throw new BusClassException("Debe seleccionar solamente 1 favorito");
+					}else{
+						Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
+						chat.add(comentario);
+						this.getCurrentEntity().getAttribute("SH_CHAT_STR").setValues(chat);
 					}
 				}
 			}

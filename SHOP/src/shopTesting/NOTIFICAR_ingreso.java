@@ -33,7 +33,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 		String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
 		Collection<User> usuarios = null;
 
-		boolean notificar = false;
+		boolean notificar = true;
 
 		if (notificar) {
 			for (int i = 0; i < gruposNotificar.length; i++) {
