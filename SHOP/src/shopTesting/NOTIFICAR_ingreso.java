@@ -52,7 +52,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 									+ "---------------------------------------------------------- <br>"
 									+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
 									+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
-									+ fechaEstimada + "<br>" + "		Descripcion: " + descripcion + "<br>"
+									+ fechaEstimada.substring(0, 10) + "<br>" + "		Descripcion: " + descripcion + "<br>"
 									+ "		Comentario: " + comentario + " <br><br>"
 									+ "---------------------------------------------------------- <br><br>"
 

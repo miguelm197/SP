@@ -86,7 +86,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 										+ "------------------------------------------------------------------------------ <br>"
 										+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
 										+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
-										+ fechaEstimada + "<br>" + "		Descripcion: " + descripcion + "<br>"
+										+ fechaEstimada.substring(0, 10) + "<br>" + "		Descripcion: " + descripcion + "<br>"
 										+ "		Comentario: " + comentario + " <br>"
 										+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>"
 										+ "		Comentario Administración: " + comentarioDir + " <br>"
