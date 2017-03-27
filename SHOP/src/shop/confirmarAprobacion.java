@@ -1,4 +1,4 @@
-package shopTesting;
+package shop;
 
 import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
