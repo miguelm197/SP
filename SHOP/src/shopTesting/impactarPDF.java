@@ -29,7 +29,7 @@ public class impactarPDF extends ApiaAbstractClass {
 
 			String path = pdf.download();
 
-			this.addMessage(path);
+	
 			this.getCurrentEntity().getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").addDocument(path, pdf.getName(),
 					pdf.getDescription(), false);
 
