@@ -28,9 +28,6 @@ public class CargarTipoCompra extends ApiaAbstractClass {
 		tipos.addPossibleValues(pos2);
 		tipos.addPossibleValues(pos3);
 		tipos.addPossibleValues(pos4);
-
-		
-		
-		 
+	 
 	}
 }

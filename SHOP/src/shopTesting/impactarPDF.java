@@ -15,19 +15,24 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 
 public class impactarPDF extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
-	
+
 		Entity currEnt = this.getCurrentEntity();
-		Document dtb = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
-			if (dtb != null) {
-				currEnt.persist();
-			}
-		
+		String listo = currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").getValuesAsString();
+
+		if (listo.equals("false")) {
+			Document pdf = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
+
+			String path = pdf.download();
+
+			this.addMessage(path);
+			this.getCurrentEntity().getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").addDocument(path, pdf.getName(),
+					pdf.getDescription(), false);
+
+		}
 	}
 }
-
-
-
