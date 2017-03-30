@@ -131,7 +131,9 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				currEnt.getAttribute("SH_CHAT_STR").setValues(chat);
 
 				currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").setValue("Avanzar");
+			
 			}
 		}
+		currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").clear();
 	}
 }

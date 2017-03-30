@@ -19,15 +19,21 @@ import java.util.GregorianCalendar;
 public class impactarPDF extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
-//	
-//		Entity currEnt = this.getCurrentEntity();
-//		Document dtb = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
-//			if (dtb != null) {
-//				currEnt.persist();
-//			}
-//		
+		//
+		// Entity currEnt = this.getCurrentEntity();
+		// String listo =
+		// currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").getValuesAsString();
+		//
+		// if (listo.equals("false")) {
+		// Document pdf =
+		// currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_COMPRA_STR").getDocumentValue();
+		//
+		// String path = pdf.download();
+		//
+		//
+		// this.getCurrentEntity().getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").addDocument(path,
+		// pdf.getName(),
+		// pdf.getDescription(), false);
+
 	}
 }
-
-
-
