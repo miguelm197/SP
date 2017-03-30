@@ -56,7 +56,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 									+ "		Comentario: " + comentario + " <br><br>"
 									+ "---------------------------------------------------------- <br><br>"
 
-									+ "Saludos, Apia :)");
+									+ "Saludos, Apia");
 				}
 			}
 
