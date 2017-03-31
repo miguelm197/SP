@@ -82,21 +82,20 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 						if (mail.compareTo("") != 0) {
 							String[] mailEnviar = { mail };
 
-							this.sendMail(mailEnviar, "DIRECCION_Se ingresó una nueva compra " + titulo,
-									"Hola Marcos o José, <br> <br>"
-											+ "Le notificamos que tiene una compra para aprobar. <br><br>"
-											+ "Información de la compra: <br>"
-
-											+ "------------------------------------------------------------------------------ <br>"
-											+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
-											+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
-											+ fechaEstimada.substring(0, 10) + "<br>" + "		Descripcion: "
-											+ descripcion + "<br>" + "		Comentario: " + comentario + " <br>"
-											+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>"
-											+ "		Comentario Administración: " + comentarioDir + " <br>"
-											+ "------------------------------------------------------------------------------ <br><br>"
-
-											+ "Saludos, Apia");
+							this.sendMail(mailEnviar, "COMPRA " + titulo + ": en espera de ser aprobada. ",
+											"Le notificamos que hay una compra en espera de ser aprobada. <br><br>" 
+											
+											+ "INFORMACIÓN DE LA COMPRA: <br>" 
+											+ "-Compra: " + titulo + "<br>" 
+											+ "-Tipo: " + tipo + "<br>"
+											+ "-Solicitado por " + solicitante + "<br>"
+											+ "-Cantidad: " + cantidad + "<br>"
+											+ "-Descripción: " + descripcion + "<br>"
+											+ "-Comentario: " + comentario + "<br><br>"
+											
+											+ "Comentario de administración: " + comentarioDir + "<br><br><br>"
+											
+											+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
 						}
 					}
 				}
@@ -115,21 +114,21 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 						if (mail.compareTo("") != 0) {
 							String[] mailEnviar = { mail };
 
-							this.sendMail(mailEnviar, "ADMINISTRACION_Se ingresó un nuevo Presupuesto " + titulo,
-									"Hola Karen, <br> <br>"
-											+ "Confirmamos que el nuevo presupuesto fue ingresado correctamente. <br><br>"
-											+ "Información del presupuesto: <br>"
-
-											+ "------------------------------------------------------------------------------ <br>"
-											+ "     Compra: " + titulo + "<br>" + "     Tipo: " + tipo + "<br>"
-											+ "     Solicitante: " + solicitante + "<br>"
-											+ "  -  -  -  -  -  -  -  -  -  -  -  -  -  -   - <br>" + "     Proveedor: "
-											+ proveedor + "<br>" + "     Monto: " + monto + " " + moneda
-											+ " (Incluye IVA)" + "<br>" + "     Cumplimiento: " + cumplimiento + "<br>"
-											+ "     Comentario: " + comentario + " <br><br>"
-											+ "------------------------------------------------------------------------------ <br><br>"
-
-											+ "Saludos, Apia");
+							this.sendMail(mailEnviar, "COMPRA " + titulo + ": nuevo presupuesto",
+											"Le notificamos que hay una compra en espera de ser aprobada. <br><br>" 
+											
+											+ "INFORMACIÓN DE LA COMPRA: <br>" 
+											+ "-Compra: " + titulo + "<br>" 
+											+ "-Tipo: " + tipo + "<br>"
+											+ "-Solicitado por " + solicitante + "<br><br>"
+											
+											+ "INFORMACIÓN DEL PRESUPUESTO"
+											+ "-Proveedor: " + proveedor + "<br>"
+											+ "-Monto: " + monto + moneda + " (Incluye IVA) <br>"
+											+ "-Cumplimiento: " + cumplimiento + "<br>"
+											+ "Comentario: " + comentario + "<br><br><br>"
+																						
+											+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
 						}
 					}
 				}

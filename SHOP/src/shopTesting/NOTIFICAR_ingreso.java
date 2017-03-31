@@ -45,18 +45,20 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "ADMINISTRACION_Se agregó una nueva compra " + titulo,
-							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-									+ " se ha ingresado correctamente. <br><br>" + "Información de la compra: <br>"
-
-									+ "---------------------------------------------------------- <br>"
-									+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
-									+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
-									+ fechaEstimada.substring(0, 10) + "<br>" + "		Descripcion: " + descripcion + "<br>"
-									+ "		Comentario: " + comentario + " <br><br>"
-									+ "---------------------------------------------------------- <br><br>"
-
-									+ "Saludos, Apia :)");
+					this.sendMail(mailEnviar, "NUEVA COMPRA " + titulo,
+									"Le notificamos que se ha ingresado una nueva compra. <br><br>" 
+									
+									+ "INFORMACIÓN DE LA COMPRA: <br>" 
+									+ "Compra: " + titulo + "<br>" 
+									+ "Tipo: " + tipo + "<br>"
+									+ "Solicitado por " + solicitante + "<br>"
+									+ "Cantidad: " + cantidad + "<br>"
+									+ "Descripción: " + descripcion + "<br>"
+									+ "Comentario: " + comentario + "<br><br>"
+									
+									+ "Fecha límite de aprobación: " + fechaEstimada.substring(0, 10) + "<br><br><br>"
+									
+									+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
 				}
 			}
 
