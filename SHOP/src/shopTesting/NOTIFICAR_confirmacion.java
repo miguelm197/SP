@@ -57,17 +57,18 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 
 						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Presupuesto aprobado",
 								"Le notificamos que para la compra " + titulo 
-								+ " se ha aprobado un presupuesto. <br><br>" 
+								+ " se ha <font color=green><strong>aprobado</strong></font> un presupuesto. <br><br>" 
 						// Agregar presupuesto que Direccion elegio		
-								+ "INFORMACIÓN DE LA COMPRA: <br>" 
-								+ "-Compra: " + titulo + "<br>" 
-								+ "-Tipo: " + tipo + "<br>"
-								+ "-Solicitado por " + solicitante + "<br>"
-								+ "-Cantidad: " + cantidad + "<br>"
-								+ "-Descripción: " + descripcion + "<br>"
-								+ "-Comentario: " + comentario + "<br><br><br>"
+								+ "<h5>INFORMACIÓN DE LA COMPRA </h5>" 
+								+ "-<i>Compra:</i> " + titulo + "<br>" 
+								+ "-<i>Tipo:</i> " + tipo + "<br>"
+								+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+								+ "-<i>Descripción:</i> " + descripcion + "<br>"
+								+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 								
-								+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+								+ "-Solicitado por " + solicitante + "<br><br><br>" 
+								
+								+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 					}
 				}
 			}
@@ -91,17 +92,18 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 								"Le notificamos que los presupuestos para la compra " + titulo
 										+ " han sido rechazados. <br><br>"
 
-										+ "INFORMACIÓN DE LA COMPRA: <br>" 
-										+ "-Compra: " + titulo + "<br>" 
-										+ "-Tipo: " + tipo + "<br>" 
-										+ "-Solicitado por " + solicitante + "<br>" 
-										+ "-Cantidad: " + cantidad + "<br>" 
-										+ "-Descripción: " + descripcion + "<br>" 
-										+ "-Comentario: " + comentario + "<br><br>"
+										+ "<h5> INFORMACIÓN DE LA COMPRA </h5>" 
+										+ "-<i>Compra:</i> " + titulo + "<br>" 
+										+ "-<i>Tipo:</i> " + tipo + "<br>"
+										+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+										+ "-<i>Descripción:</i> " + descripcion + "<br>"
+										+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 										
-										+ "Comentario de dirección: " + comentarioAprobacion + "<br><br><br>"
+										+"-Solicitado por " + solicitante + "<br><br>" 
+										
+										+ "<i>Comentario de dirección: </i>" + comentarioAprobacion + "<br><br><br>"
 
-										+ "Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 					}
 				}
 			}
@@ -124,17 +126,18 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 										"Le notificamos que para la compra " + titulo 
 										+ " se ha puesto en espera. <br><br>" 
 										
-										+ "Fecha para retomar: " + fechafin.substring(0, 10) + "<br><br>"
+										+ "Fecha para retomar: " +"<font color=red>" + fechafin.substring(0, 10) + "</font><br><br>"
 									
-										+ "INFORMACIÓN DE LA COMPRA: <br>" 
-										+ "-Compra: " + titulo + "<br>" 
-										+ "-Tipo: " + tipo + "<br>"
-										+ "-Solicitado por " + solicitante + "<br>"
-										+ "-Cantidad: " + cantidad + "<br>"
-										+ "-Descripción: " + descripcion + "<br>"
-										+ "-Comentario: " + comentario + "<br><br><br>"
+										+ "<h5> INFORMACIÓN DE LA COMPRA </h5>" 
+										+ "-<i>Compra:</i> " + titulo + "<br>" 
+										+ "-<i>Tipo:</i> " + tipo + "<br>"
+										+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+										+ "-<i>Descripción:</i> " + descripcion + "<br>"
+										+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 										
-										+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+										+"-Solicitado por " + solicitante + "<br><br><br>" 
+										
+										+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 					}
 				}
 			}
@@ -156,17 +159,18 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 
 						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Cancelada",
 								"Le notificamos que la compra " + titulo 
-								+ " ha sido cancelada. <br><br>" 
+								+ " ha sido " + "<font color=red><strong>cancelada</strong></font>. <br><br>" 
 							
-								+ "INFORMACIÓN DE LA COMPRA: <br>" 
-								+ "-Compra: " + titulo + "<br>" 
-								+ "-Tipo: " + tipo + "<br>"
-								+ "-Solicitado por " + solicitante + "<br>"
-								+ "-Cantidad: " + cantidad + "<br>"
-								+ "-Descripción: " + descripcion + "<br>"
-								+ "-Comentario: " + comentario + "<br><br><br>"
+								+"<h5> INFORMACIÓN DE LA COMPRA </h5>" 
+								+ "-<i>Compra:</i> " + titulo + "<br>" 
+								+ "-<i>Tipo:</i> " + tipo + "<br>"
+								+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+								+ "-<i>Descripción:</i> " + descripcion + "<br>"
+								+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 								
-								+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+								+"-Solicitado por " + solicitante + "<br><br><br>"
+								
+								+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 					}
 				}
 			}

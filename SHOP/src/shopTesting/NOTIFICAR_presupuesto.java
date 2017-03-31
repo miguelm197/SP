@@ -86,17 +86,18 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 							this.sendMail(mailEnviar, "COMPRA " + titulo + ": en espera de ser aprobada. ",
 											"Le notificamos que hay una compra en espera de ser aprobada. <br><br>" 
 											
-											+ "INFORMACIÓN DE LA COMPRA: <br>" 
-											+ "-Compra: " + titulo + "<br>" 
-											+ "-Tipo: " + tipo + "<br>"
-											+ "-Solicitado por " + solicitante + "<br>"
-											+ "-Cantidad: " + cantidad + "<br>"
-											+ "-Descripción: " + descripcion + "<br>"
-											+ "-Comentario: " + comentario + "<br><br>"
+											+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+											+ "-<i>Compra:</i> " + titulo + "<br>" 
+											+ "-<i>Tipo:</i> " + tipo + "<br>"
+											+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+											+ "-<i>Descripción:</i> " + descripcion + "<br>"
+											+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+											+ "-Solicitado por " + solicitante + "<br><br>"
 											
-											+ "Comentario de administración: " + comentarioDir + "<br><br><br>"
 											
-											+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+											+ "<i>Comentario de administración: </i>" + comentarioDir + "<br><br><br>"
+											
+											+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 						}
 					}
 				}
@@ -118,18 +119,18 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 							this.sendMail(mailEnviar, "COMPRA " + titulo + ": nuevo presupuesto",
 											"Le notificamos que hay una compra en espera de ser aprobada. <br><br>" 
 											
-											+ "INFORMACIÓN DE LA COMPRA: <br>" 
-											+ "-Compra: " + titulo + "<br>" 
-											+ "-Tipo: " + tipo + "<br>"
+											+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+											+ "-<i>Compra:</i> " + titulo + "<br>" 
+											+ "-<i>Tipo:</i> " + tipo + "<br>"
 											+ "-Solicitado por " + solicitante + "<br><br>"
 											
-											+ "INFORMACIÓN DEL PRESUPUESTO"
-											+ "-Proveedor: " + proveedor + "<br>"
-											+ "-Monto: " + monto + moneda + " (Incluye IVA) <br>"
-											+ "-Cumplimiento: " + cumplimiento + "<br>"
-											+ "Comentario: " + comentario + "<br><br><br>"
+											+ "<h3>INFORMACIÓN DEL PRESUPUESTO </h3>"
+											+ "-<i>Proveedor: <i>" + proveedor + "<br>"
+											+ "-<i>Monto: <i>" + monto + moneda + " (Incluye IVA) <br>"
+											+ "-<i>Cumplimiento: <i>" + cumplimiento + "<br>"
+											+ "-<i>Comentario:<i> " + comentario + "<br><br><br>"
 																						
-											+"Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+											+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 						}
 					}
 				}

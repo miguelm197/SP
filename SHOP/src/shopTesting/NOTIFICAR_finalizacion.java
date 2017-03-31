@@ -46,14 +46,17 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 					String[] mailEnviar = { mail };
 
 					this.sendMail(mailEnviar, "COMPRA " + titulo + ": Finalizada",
-							"Le notificamos que la compra " + titulo + " ha sido finalizada con éxito. <br><br>"
+							"Le notificamos que la compra " + titulo + ", solicitada por " + solicitante + 
+							", ha sido finalizada con éxito. <br><br>"
 
-									+ "INFORMACIÓN DE LA COMPRA: <br>" + "Compra: " + titulo + "<br>" + "Tipo: " + tipo
-									+ "<br>" + "Solicitado por " + solicitante + "<br>" + "Cantidad: " + cantidad
-									+ "<br>" + "Descripción: " + descripcion + "<br>" + "Comentario: " + comentario
-									+ "<br><br><br>"
+									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+									+ "-<i>Compra:</i> " + titulo + "<br>" 
+									+ "-<i>Tipo:</i> " + tipo + "<br>"
+									+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+									+ "-<i>Descripción:</i> " + descripcion + "<br>"
+									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 
-									+ "Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.");
+									+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
 				}
 			}
 		}

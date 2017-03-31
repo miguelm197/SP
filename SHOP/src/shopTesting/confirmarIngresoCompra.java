@@ -17,7 +17,8 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 	protected void executeClass() throws BusClassException {
 
 		String cantidad = this.getCurrentEntity().getAttribute("SH_CANTIDAD_INGRESO_COMPRA_STR").getValueAsString();
-		String fechaEstimada = this.getCurrentEntity().getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
+		String fechaEstimada = this.getCurrentEntity().getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC")
+				.getValueAsString();
 
 		int diaEstimada = Integer.parseInt(fechaEstimada.substring(0, 2));
 		int mesEstimada = Integer.parseInt(fechaEstimada.substring(3, 5));
@@ -39,13 +40,16 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 			e.printStackTrace();
 		}
 
-		if (fechaEst.after(fechaActual)){
+		if (fechaEst.after(fechaActual)) {
+
 			System.out.println("Sape");
-		}
-		else{
+
+			String fechaIngreso = fechaActual + "";
+			this.getCurrentEntity().getAttribute("SH_FECHA_INGRESO_STR").setValue(fechaIngreso);
+
+		} else {
 			throw new BusClassException("Fecha no puede ser anterior a la actual");
 		}
-	
 
 		int cant;
 
