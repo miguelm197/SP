@@ -58,7 +58,7 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 							
 							+"-Solicitado por " + solicitante + "<br><br><br>" 
 							
-							+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+							+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
 		}

@@ -57,7 +57,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 
 									+ "Fecha límite de aprobación: " +  "<font color=red>" + fechaEstimada.substring(0, 10) + "</font><br><br><br>"
 
-									+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+									+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
 

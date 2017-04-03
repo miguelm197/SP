@@ -56,7 +56,7 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 									+ "-<i>Descripción:</i> " + descripcion + "<br>"
 									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 
-									+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+									+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
 		}

@@ -97,7 +97,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 											
 											+ "<i>Comentario de administración: </i>" + comentarioDir + "<br><br><br>"
 											
-											+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+											+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 						}
 					}
 				}
@@ -130,7 +130,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 											+ "-<i>Cumplimiento: <i>" + cumplimiento + "<br>"
 											+ "-<i>Comentario:<i> " + comentario + "<br><br><br>"
 																						
-											+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+											+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 						}
 					}
 				}

@@ -68,7 +68,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 								
 								+ "-Solicitado por " + solicitante + "<br><br><br>" 
 								
-								+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+								+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
@@ -103,7 +103,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 										
 										+ "<i>Comentario de dirección: </i>" + comentarioAprobacion + "<br><br><br>"
 
-										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
@@ -137,7 +137,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 										
 										+"-Solicitado por " + solicitante + "<br><br><br>" 
 										
-										+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+										+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
@@ -170,7 +170,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 								
 								+"-Solicitado por " + solicitante + "<br><br><br>"
 								
-								+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no contestes a este e-mail.</font>");
+								+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
