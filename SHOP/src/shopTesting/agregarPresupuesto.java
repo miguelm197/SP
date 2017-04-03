@@ -45,6 +45,10 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				String moneda = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_COMPRA_STR").getValueAsString();
 				String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
 
+				
+				
+			
+				
 				boolean bandera = true;
 				double mon;
 				int cum;
@@ -124,7 +128,12 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				String nomUser = this.getCurrentUser().getName();
 				String coment = currEnt.getAttribute("SH_COMENTARIODIR_PRESUPUESTO_STR").getValueAsString();
 
-				String comentario = nomUser + " - ADMINISTRACIÓN \n\n" + coment + "\n";
+				DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+				Date fechaActual = new Date();
+				String FechaActS = formatoFecha.format(fechaActual);
+				
+				
+				String comentario = nomUser + " - " + FechaActS + " \n\n" + coment + "\n";
 
 				Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
 				chat.add(comentario);

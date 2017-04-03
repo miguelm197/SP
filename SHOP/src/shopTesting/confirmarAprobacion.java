@@ -24,6 +24,12 @@ public class confirmarAprobacion extends ApiaAbstractClass {
 		String comentario = this.getCurrentEntity().getAttribute("SH_COMENTARIO_APROBACION_COMPRA_STR")
 				.getValueAsString();
 		String nomUser = this.getCurrentUser().getName();
+		
+		
+		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		Date fechaActual = new Date();
+		String FechaActS = formatoFecha.format(fechaActual);
+		
 
 		if (estado.equals("2")) {
 			// VUELVE A PRESUPUESTO
@@ -32,7 +38,7 @@ public class confirmarAprobacion extends ApiaAbstractClass {
 
 			Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
 
-			String coment = nomUser + " - DIRECCIÓN \n\n" + comentario + "\n";
+			String coment = nomUser + " - " + FechaActS + " \n\n" + comentario + "\n";
 			chat.add(coment);
 			this.getCurrentEntity().getAttribute("SH_CHAT_STR").setValues(chat);
 
@@ -47,14 +53,11 @@ public class confirmarAprobacion extends ApiaAbstractClass {
 				int mesEstimada = Integer.parseInt(fechaEstimada.substring(3, 5));
 				int aniEstimada = Integer.parseInt(fechaEstimada.substring(6, 10));
 
-				DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+			
 				Date fechaEst = null;
-				Date fechaAct = null;
+				Date fechaAct = null;	
 
-				Date fechaActual = new Date();
-				fechaActual.setHours(0);
-				fechaActual.setMinutes(0);
-				fechaActual.setSeconds(0);
+
 
 				try {
 					fechaEst = formatoFecha.parse(fechaEstimada);

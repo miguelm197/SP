@@ -29,6 +29,12 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 		String fechaEstimada = currEnt.getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
 		String descripcion = currEnt.getAttribute("SH_DESCRIPCION_INGRESO_COMPRA_STR").getValueAsString();
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
+		
+		
+		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+		Date fechaActual = new Date();
+		String fecha = formatoFecha.format(fechaActual);
+	
 
 		String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
 		Collection<User> usuarios = null;
@@ -49,6 +55,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 									"Le notificamos que se ha ingresado una nueva compra solicitada por " + solicitante + "<br><br>" 
 									
 									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+									+ "-<i>Fecha de ingreso:</i> " + fecha + "<br>"
 									+ "-<i>Compra:</i> " + titulo + "<br>" 
 									+ "-<i>Tipo:</i> " + tipo + "<br>"
 									+ "-<i>Cantidad:</i> " + cantidad + "<br>"

@@ -25,17 +25,15 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 		int aniEstimada = Integer.parseInt(fechaEstimada.substring(6, 10));
 
 		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+		Date fechaActual = new Date();
+
 		Date fechaEst = null;
 		Date fechaAct = null;
-
-		Date fechaActual = new Date();
-		fechaActual.setHours(0);
-		fechaActual.setMinutes(0);
-		fechaActual.setSeconds(0);
-
+		String FechaActS = formatoFecha.format(fechaActual);
+	
+		
 		try {
 			fechaEst = formatoFecha.parse(fechaEstimada);
-			fechaAct = formatoFecha.parse(fechaActual.toString());
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -44,8 +42,7 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 
 			System.out.println("Sape");
 
-			String fechaIngreso = fechaActual + "";
-			this.getCurrentEntity().getAttribute("SH_FECHA_INGRESO_STR").setValue(fechaIngreso);
+			this.getCurrentEntity().getAttribute("SH_FECHA_INGRESO_STR").setValue(FechaActS);
 
 		} else {
 			throw new BusClassException("Fecha no puede ser anterior a la actual");
