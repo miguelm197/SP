@@ -42,15 +42,16 @@ public class cargarMontoSolicitaCompra extends ApiaAbstractClass {
 			}
 		}
 		
+		this.addMessage(monedas.get(f).toString());
 		String moneda;
-		if (monedas.get(f).equals("Pesos")){
+		if (monedas.get(f).toString().equals("Pesos")){
 			moneda="$U";
 		}else{
 			moneda="U$D";
 		}
 
 		this.getCurrentEntity().getAttribute("SH_MONTO_SOLICITUD_COMPRA_INFO_STR").setValue(moneda + " " +montos.get(f));
-	//	this.getCurrentEntity().getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").setValue(monedas.get(f));
+		this.getCurrentEntity().getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").setValue(monedas.get(f));
 		this.getCurrentEntity().getAttribute("SH_PROVEEDOR_SOLICITUD_COMPRA_INFO_STR").setValue(proveedores.get(f));
 
 

@@ -26,12 +26,12 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 
 		Entity currEnt = this.getCurrentEntity();
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
-		String listo = currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").getValuesAsString();
+		//String listo = currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").getValuesAsString();
 
 		String iva = currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").getValueAsString();
 		String suma = currEnt.getAttribute("SH_MONTO_MAS_IVA_PRESUPUESTOS_STR").getValueAsString();
 
-		if (listo.equals("false")) {
+		// if (listo.equals("false")) {
 			if (envDir.equals("false")) {
 				if (iva.equals("Sin IVA")) {
 					currEnt.getAttribute("SH_MONTO_PRESUPUESTO_COMPRA_STR").setValue(suma);
@@ -145,7 +145,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").setValue("Avanzar");
 
 			}
-		}
-		currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").clear();
+		// }
+		// currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").clear();
 	}
 }
