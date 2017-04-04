@@ -18,9 +18,9 @@ public class cargarEstadoCompra extends ApiaAbstractClass {
 
 		Attribute tipos = this.getCurrentEntity().getAttribute("SH_ESTADO_APROBACION_COMPRA_STR");
 
-		PossibleValue pos1 = new PossibleValue("1", "Avanzar");
+		PossibleValue pos1 = new PossibleValue("1", "Ejecutar Compra");
 		PossibleValue pos2 = new PossibleValue("2", "Volver a Presupuestos");
-		 PossibleValue pos3 = new PossibleValue("3", "Dormir");
+		 PossibleValue pos3 = new PossibleValue("3", "Posponer");
 		PossibleValue pos4 = new PossibleValue("4", "Cancelar");
 
 		tipos.addPossibleValues(pos1);
