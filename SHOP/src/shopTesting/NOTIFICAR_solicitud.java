@@ -23,8 +23,13 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		Entity currEnt = this.getCurrentEntity();
 
 		String titulo = currEnt.getAttribute("SH_TITULO_INGRESO_COMPRA_STR").getValueAsString();
-		String solicitante = currEnt.getAttribute("SH_SOLICITANTE_INGRESO_COMPRA_STR").getValueAsString();
-
+		String proveedor = currEnt.getAttribute("SH_PROVEEDOR_SOLICITUD_COMPRA_INFO_STR").getValueAsString();
+		String formapago = currEnt.getAttribute("SH_FORMADEPAGO_SOLICITA_COMPRA_STR").getValueAsString();
+		String cantidad = currEnt.getAttribute("SH_CANTIDAD_INGRESO_COMPRA_STR").getValueAsString();
+		String monto = currEnt.getAttribute("SH_MONTO_SOLICITUD_COMPRA_INFO_STR").getValueAsString();
+		String comentario = currEnt.getAttribute("SH_COMENTARIO_SOLICITA_COMPRA_STR").getValueAsString();
+		String fechaSol = currEnt.getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
+		
 		boolean notificar = false;
 
 		if (notificar) {
@@ -41,11 +46,23 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "ADMINISTRACION, DIRECCION_Se solicitó la compra " + titulo,
-							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-									+ " ha sido solicitada correctamente. <br><br>"
-
-									+ "Saludos, Apia");
+					this.sendMail(mailEnviar, "COMPRA " + titulo + ": en ejecución. ",
+							"Le notificamos que la compra " + titulo + " esta siendo solicitada al proveedor. <br><br>" 
+							
+							+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+							+ "-<i>Compra:</i> " + titulo + "<br>" 
+							+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+							+ "-<i>Proveedor:</i> " + proveedor + "<br>"
+							+ "-<i>Forma de pago:</i> " + formapago + "<br><br>"
+							
+							+ "-<i>Total:</i> " + monto + "<br><br>"
+							
+							+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+							
+							+ "-Fecha de solicitud: " + fechaSol.substring(0, 10) + "<br><br><br>"
+							
+							
+							+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
 		}
