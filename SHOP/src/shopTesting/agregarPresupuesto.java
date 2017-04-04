@@ -45,10 +45,13 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				String moneda = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_COMPRA_STR").getValueAsString();
 				String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
 
-				
-				
-			
-				
+				String monedita;
+				if (moneda.equals("Pesos")) {
+					monedita = "$U";
+				} else {
+					monedita = "U$D";
+				}
+
 				boolean bandera = true;
 				double mon;
 				int cum;
@@ -87,10 +90,11 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					cump.add(cumplimiento);
 
 					Collection mont = currEnt.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
-					mont.add(monto);
+					mont.add(monedita + " " + monto);
 
-					Collection mone = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").getValues();
-					mone.add(moneda);
+					// Collection mone =
+					// currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").getValues();
+					// mone.add(moneda);
 
 					Collection come = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 					come.add(comentario);
@@ -102,7 +106,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					currEnt.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").setValues(prov);
 					currEnt.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").setValues(cump);
 					currEnt.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(mont);
-					currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").setValues(mone);
+					// currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").setValues(mone);
 					currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(come);
 					currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").setValue("Con IVA");
 
@@ -131,8 +135,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 				Date fechaActual = new Date();
 				String FechaActS = formatoFecha.format(fechaActual);
-				
-				
+
 				String comentario = nomUser + " - " + FechaActS + " \n\n" + coment + "\n";
 
 				Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
@@ -140,7 +143,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				currEnt.getAttribute("SH_CHAT_STR").setValues(chat);
 
 				currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").setValue("Avanzar");
-			
+
 			}
 		}
 		currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").clear();
