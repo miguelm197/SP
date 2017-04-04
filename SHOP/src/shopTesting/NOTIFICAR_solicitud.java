@@ -28,9 +28,18 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		String cantidad = currEnt.getAttribute("SH_CANTIDAD_INGRESO_COMPRA_STR").getValueAsString();
 		String monto = currEnt.getAttribute("SH_MONTO_SOLICITUD_COMPRA_INFO_STR").getValueAsString();
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_SOLICITA_COMPRA_STR").getValueAsString();
-		String fechaSol = currEnt.getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
 		
-		boolean notificar = false;
+		//String fechaSol = currEnt.getAttribute("SH_FECHA_SOLICITUD_COMPRA_STR").getValueAsString(); 
+		
+					
+		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+		Date fechaActual = new Date();
+		String fechaSol = formatoFecha.format(fechaActual);
+		
+		
+				
+				
+		boolean notificar = true;
 
 		if (notificar) {
 			String[] gruposNotificar = { "ADMINISTRACION_TESTING", "DIRECCION_TESTING" };
@@ -61,7 +70,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 							
 							+ "-Fecha de solicitud: " + fechaSol.substring(0, 10) + "<br><br><br>"
 							
-							
+												
 							+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
