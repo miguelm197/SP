@@ -29,31 +29,25 @@ public class cargarMontoSolicitaCompra extends ApiaAbstractClass {
 		Collection mone = this.getCurrentEntity().getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList monedas = new ArrayList();
 		monedas.addAll(mone);
-		
+
 		Collection prov = this.getCurrentEntity().getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList proveedores = new ArrayList();
 		proveedores.addAll(prov);
 
 		int f = 0;
-
+		// this.addMessage("Cantidad de presupuestos: " + favoritos.size() +
+		// "");
+		// this.addMessage("Valor del favorito: " + montos.get(f));
 		for (int i = 0; i < favoritos.size(); i++) {
 			if (favoritos.get(i).equals("true")) {
+				//this.addMessage("valor: " + favoritos.get(i));
 				f = i;
 			}
 		}
-		
-		this.addMessage(monedas.get(f).toString());
-		String moneda;
-		if (monedas.get(f).toString().equals("Pesos")){
-			moneda="$U";
-		}else{
-			moneda="U$D";
-		}
 
-		this.getCurrentEntity().getAttribute("SH_MONTO_SOLICITUD_COMPRA_INFO_STR").setValue(moneda + " " +montos.get(f));
-		//this.getCurrentEntity().getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").setValue(monedas.get(f));
+		this.getCurrentEntity().getAttribute("SH_MONTO_SOLICITUD_COMPRA_INFO_STR").setValue(montos.get(f));
+		// //this.getCurrentEntity().getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").setValue(monedas.get(f));
 		this.getCurrentEntity().getAttribute("SH_PROVEEDOR_SOLICITUD_COMPRA_INFO_STR").setValue(proveedores.get(f));
-
 
 	}
 }
