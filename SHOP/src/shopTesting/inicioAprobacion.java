@@ -15,6 +15,7 @@ import java.util.GregorianCalendar;
 public class inicioAprobacion extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
+		
 
 		String estado = this.getCurrentEntity().getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").getValueAsString();
 		String comentario = this.getCurrentEntity().getAttribute("SH_COMENTARIO_APROBACION_COMPRA_STR")

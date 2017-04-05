@@ -26,6 +26,8 @@ public class cargarFormaDePago extends ApiaAbstractClass {
 		PossibleValue pos3 = new PossibleValue("Cheque", "Cheque");
 		PossibleValue pos4 = new PossibleValue("Depósito", "Depósito Bancario");
 
+		
+		
 		tipos.addPossibleValues(pos1);
 		tipos.addPossibleValues(pos2);
 		tipos.addPossibleValues(pos3);

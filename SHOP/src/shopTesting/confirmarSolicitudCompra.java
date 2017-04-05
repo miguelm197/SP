@@ -16,6 +16,7 @@ public class confirmarSolicitudCompra extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 
+		
 		String fechaEstimada = this.getCurrentEntity().getAttribute("SH_FECHA_SOLICITA_COMPRA_FEC ").getValueAsString();
 
 		int diaEstimada = Integer.parseInt(fechaEstimada.substring(0, 2));

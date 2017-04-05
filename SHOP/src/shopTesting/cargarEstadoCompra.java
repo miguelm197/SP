@@ -16,6 +16,7 @@ public class cargarEstadoCompra extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 
+		
 		Attribute tipos = this.getCurrentEntity().getAttribute("SH_ESTADO_APROBACION_COMPRA_STR");
 
 		PossibleValue pos1 = new PossibleValue("1", "Ejecutar Compra");

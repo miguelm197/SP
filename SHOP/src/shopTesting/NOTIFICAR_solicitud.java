@@ -30,6 +30,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		String moneda = currEnt.getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").getValueAsString();
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_SOLICITA_COMPRA_STR").getValueAsString();
 		
+		
 		String monedita;
 		
 		//String fechaSol = currEnt.getAttribute("SH_FECHA_SOLICITUD_COMPRA_STR").getValueAsString(); 

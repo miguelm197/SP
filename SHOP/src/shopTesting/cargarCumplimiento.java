@@ -31,6 +31,7 @@ public class cargarCumplimiento extends ApiaAbstractClass {
 
 		
 		
+		
 		cumplimiento.addPossibleValues(pos1);
 		cumplimiento.addPossibleValues(pos2);
 		cumplimiento.addPossibleValues(pos3);

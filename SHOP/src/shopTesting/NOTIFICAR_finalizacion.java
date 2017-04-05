@@ -30,6 +30,7 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 		String descripcion = currEnt.getAttribute("SH_DESCRIPCION_INGRESO_COMPRA_STR").getValueAsString();
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
 
+		
 		boolean notificar = false;
 
 		if (notificar) {

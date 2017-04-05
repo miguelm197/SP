@@ -32,6 +32,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 		String fechafin = currEnt.getAttribute("SH_FECHA_FIN_PENDIENTE_FEC").getValueAsString();
 		String comentarioAprobacion = currEnt.getAttribute("SH_COMENTARIO_APROBACION_COMPRA_STR").getValueAsString();
 
+		
 		String estado = currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").getValueAsString();
 
 		boolean notificarAvanzar = true;

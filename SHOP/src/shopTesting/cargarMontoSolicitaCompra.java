@@ -34,6 +34,7 @@ public class cargarMontoSolicitaCompra extends ApiaAbstractClass {
 		ArrayList proveedores = new ArrayList();
 		proveedores.addAll(prov);
 
+		
 		int f = 0;
 		// this.addMessage("Cantidad de presupuestos: " + favoritos.size() +
 		// "");

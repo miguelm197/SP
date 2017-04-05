@@ -32,6 +32,7 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 		String FechaActS = formatoFecha.format(fechaActual);
 	
 		
+		
 		try {
 			fechaEst = formatoFecha.parse(fechaEstimada);
 		} catch (ParseException e) {

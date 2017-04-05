@@ -17,6 +17,7 @@ public class estadoActual extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 
+		
 		Entity currEnt = this.getCurrentEntity();
 
 		String nomTask = this.getCurrentTask().getTaskName().toString();

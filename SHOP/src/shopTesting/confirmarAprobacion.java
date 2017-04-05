@@ -31,6 +31,7 @@ public class confirmarAprobacion extends ApiaAbstractClass {
 		String FechaActS = formatoFecha.format(fechaActual);
 		
 
+		
 		if (estado.equals("2")) {
 			// VUELVE A PRESUPUESTO
 			this.getCurrentEntity().getAttribute("SH_COMENTARIO_VUELTAPRESUPUESTO_COMPRA_STR").setValue(comentario);

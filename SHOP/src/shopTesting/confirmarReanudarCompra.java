@@ -19,6 +19,7 @@ public class confirmarReanudarCompra extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 
+		
 //		Collection grup = this.getCurrentUser().get;
 //		ArrayList grupos = new ArrayList();
 //		grupos.addAll(grup);

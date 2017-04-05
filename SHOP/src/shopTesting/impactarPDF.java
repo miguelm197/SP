@@ -20,6 +20,7 @@ import java.util.Iterator;
 public class impactarPDF extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
+		
 
 		Entity currEnt = this.getCurrentEntity();
 		String listo = currEnt.getAttribute("SH_LISTO_PRESUPUESTOS_STR").getValuesAsString();

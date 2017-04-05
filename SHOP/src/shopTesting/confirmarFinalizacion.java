@@ -25,6 +25,7 @@ public class confirmarFinalizacion extends ApiaAbstractClass {
 		Date fechaActual = new Date();
 		String FechaActS = formatoFecha.format(fechaActual);
 
+		
 		boolean bandera = true;
 		int pun;
 

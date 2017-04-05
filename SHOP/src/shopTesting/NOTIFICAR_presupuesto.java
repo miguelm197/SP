@@ -22,8 +22,8 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 		Entity currEnt = this.getCurrentEntity();
 
-		this.addMessage("Paso 1 lo hace");
 
+		
 		Collection prov = this.getCurrentEntity().getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList proveedores = new ArrayList();
 		proveedores.addAll(prov);
@@ -71,8 +71,6 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 				String[] gruposNotificar = { "DIRECCION_TESTING" };
 				Collection<User> usuarios = null;
 
-				this.addMessage("Enviando a DIRECCION...");
-				this.addMessage("Cantidad de usuarios: " + gruposNotificar.length);
 
 				for (int i = 0; i < gruposNotificar.length; i++) {
 					usuarios = this.getGroup(gruposNotificar[i]).getUsers();
@@ -80,13 +78,10 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 				for (User u : usuarios) {
 					String mail = u.getEmail();
-					this.addMessage("Mail: " + mail);
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
-						this.addMessage("mails: " + mail);
 						this.sendMail(mailEnviar, "COMPRA " + titulo + ": en espera de ser aprobada. ",
 								"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
-
 										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
 										+ "-<i>Tipo:</i> " + tipo + "<br>" + "-<i>Cantidad:</i> " + cantidad + "<br>"
 										+ "-<i>Descripción:</i> " + descripcion + "<br>" + "-<i>Comentario:</i> "

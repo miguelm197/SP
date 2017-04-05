@@ -24,6 +24,7 @@ public class init_confirmarCompra extends ApiaAbstractClass {
 		currEnt.getAttribute("SH_COMENTARIO_APROBACION_COMPRA_STR").clear();
 		
 		
+		
 	}
 }
 

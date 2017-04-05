@@ -40,5 +40,6 @@ public class cargarPuntaje extends ApiaAbstractClass {
 		puntaje.addPossibleValues(pos9);
 		puntaje.addPossibleValues(pos10);
 
+		
 	}
 }

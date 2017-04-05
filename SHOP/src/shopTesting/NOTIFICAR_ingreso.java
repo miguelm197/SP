@@ -31,6 +31,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
 		
 		
+		
 		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 		Date fechaActual = new Date();
 		String fecha = formatoFecha.format(fechaActual);
