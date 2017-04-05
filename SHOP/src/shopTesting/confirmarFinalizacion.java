@@ -40,7 +40,7 @@ public class confirmarFinalizacion extends ApiaAbstractClass {
 				throw new BusClassException("El puntaje debe de estar entre 0 y 10");
 			}else{
 				
-				this.getCurrentEntity().getAttribute("SH_FECHA_FINAL_FEC").setValue(FechaActS);
+				this.getCurrentEntity().getAttribute("SH_FECHA_FINAL_FEC").setValue(fechaActual);
 			}
 		}
 	}
