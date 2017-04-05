@@ -29,6 +29,8 @@ public class cargarCumplimiento extends ApiaAbstractClass {
 		PossibleValue pos9 = new PossibleValue("9", "9");
 		PossibleValue pos10 = new PossibleValue("10", "10");
 
+		
+		
 		cumplimiento.addPossibleValues(pos1);
 		cumplimiento.addPossibleValues(pos2);
 		cumplimiento.addPossibleValues(pos3);
