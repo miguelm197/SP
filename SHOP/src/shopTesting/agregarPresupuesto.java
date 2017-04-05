@@ -56,12 +56,12 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				double mon;
 				int cum;
 
-				try {
-					mon = Double.parseDouble(monto);
-				} catch (Exception e) {
-					bandera = false;
-					throw new BusClassException("Ingreso de monto inválido");
-				}
+//				try {
+//					mon = Double.parseDouble(monto);
+//				} catch (Exception e) {
+//					bandera = false;
+//					throw new BusClassException("Ingreso de monto inválido");
+//				} 
 
 				try {
 					cum = Integer.parseInt(cumplimiento);
@@ -70,7 +70,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					throw new BusClassException("Ingreso de cumplimiento inválido");
 				}
 
-				if (mon < 0) {
+				 if (mon < 0) {
 					throw new BusClassException("El monto debe ser mayor a 0");
 				}
 
