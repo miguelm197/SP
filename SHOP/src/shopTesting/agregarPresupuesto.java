@@ -136,7 +136,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				Date fechaActual = new Date();
 				String FechaActS = formatoFecha.format(fechaActual);
 
-				String comentario = nomUser + " - " + FechaActS + " \n\n" + coment + "\n";
+				String comentario = FechaActS + " - " + nomUser + ": " +  coment + "\n\n";
 
 				Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
 				chat.add(comentario);
