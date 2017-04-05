@@ -51,7 +51,7 @@ public class cargarMontoSolicitaCompra extends ApiaAbstractClass {
 		}
 
 		this.getCurrentEntity().getAttribute("SH_MONTO_SOLICITUD_COMPRA_INFO_STR").setValue(moneda + " " +montos.get(f));
-		this.getCurrentEntity().getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").setValue(monedas.get(f));
+		//this.getCurrentEntity().getAttribute("SH_MONEDA_SOLICITUD_COMPRA_INFO_STR").setValue(monedas.get(f));
 		this.getCurrentEntity().getAttribute("SH_PROVEEDOR_SOLICITUD_COMPRA_INFO_STR").setValue(proveedores.get(f));
 
 
