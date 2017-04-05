@@ -38,7 +38,7 @@ public class confirmarAprobacion extends ApiaAbstractClass {
 
 			Collection chat = this.getCurrentEntity().getAttribute("SH_CHAT_STR").getValues();
 
-			String coment = nomUser + " - " + FechaActS + " \n\n" + comentario + "\n";
+			String coment = FechaActS + " - " + nomUser + ": " +  comentario + "\n\n";
 			chat.add(coment);
 			this.getCurrentEntity().getAttribute("SH_CHAT_STR").setValues(chat);
 
