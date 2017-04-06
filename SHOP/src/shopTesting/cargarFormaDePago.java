@@ -21,6 +21,7 @@ public class cargarFormaDePago extends ApiaAbstractClass {
 		// currEnt.getAttribute("").clear();
 		Attribute tipos = this.getCurrentEntity().getAttribute("SH_FORMADEPAGO_SOLICITA_COMPRA_STR");
 
+		
 		PossibleValue pos1 = new PossibleValue("Efectivo", "Efectivo");
 		PossibleValue pos2 = new PossibleValue("Tarjeta", "Tarjeta");
 		PossibleValue pos3 = new PossibleValue("Cheque", "Cheque");
@@ -32,6 +33,7 @@ public class cargarFormaDePago extends ApiaAbstractClass {
 		tipos.addPossibleValues(pos2);
 		tipos.addPossibleValues(pos3);
 		tipos.addPossibleValues(pos4);
+	
 
 	}
 }
