@@ -23,7 +23,7 @@ public class impactarFactura extends ApiaAbstractClass {
 		
 		Entity currEnt = this.getCurrentEntity();
 		//Adjunto
-		Document fac = currEnt.getAttribute("PL_0_REPARTIDO_STR").getDocumentValue();
+		Document fac = currEnt.getAttribute("SH_FACTURA_STR").getDocumentValue();
 		if (fac != null) {
 			currEnt.persist();
 		}

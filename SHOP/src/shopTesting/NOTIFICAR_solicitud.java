@@ -35,7 +35,8 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		
 		//String fechaSol = currEnt.getAttribute("SH_FECHA_SOLICITUD_COMPRA_STR").getValueAsString(); 
 		
-		this.addMessage(moneda);
+		
+		
 		if (moneda.equals("Pesos")){
 			monedita = "$U";
 		} else {

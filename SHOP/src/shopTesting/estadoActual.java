@@ -54,7 +54,7 @@ public class estadoActual extends ApiaAbstractClass {
 
 			case "3":
 				// DORMIDO
-				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Dormido");
+				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Pospuesto");
 				break;
 
 			case "4":
