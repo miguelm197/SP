@@ -30,11 +30,7 @@ public class cargarEstadoCompra extends ApiaAbstractClass {
 		tipos.addPossibleValues(pos4);
 		tipos.addPossibleValues(pos5);
 
-		
-		// no entendi donde va este if en la clase confirmarAprobacion
-		// if (tipos.equals(" ")) {
-		//	throw new BusClassException("Debe elegir una de las opciones");
-		// }
+
 
 	}
 }
