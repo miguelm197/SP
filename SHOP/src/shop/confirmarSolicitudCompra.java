@@ -40,12 +40,12 @@ public class confirmarSolicitudCompra extends ApiaAbstractClass {
 		}
 
 		
-		if (fechaEst.after(fechaActual)){
+		/* if (fechaEst.after(fechaActual)){
 			System.out.println("Sape");
 		}
 		else{
 			throw new BusClassException("Fecha no puede ser anterior a la actual");
-		}
+		} */
 	
 	
 		

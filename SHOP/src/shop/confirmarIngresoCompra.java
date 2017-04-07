@@ -39,7 +39,7 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 			e.printStackTrace();
 		}
 
-		if (fechaEst.after(fechaActual)) {
+		/* if (fechaEst.after(fechaActual)) {
 
 			System.out.println("Sape");
 
@@ -47,7 +47,7 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 
 		} else {
 			throw new BusClassException("Fecha no puede ser anterior a la actual");
-		}
+		} */
 
 		int cant;
 
