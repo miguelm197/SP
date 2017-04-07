@@ -15,18 +15,28 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class init_confirmarCompra extends ApiaAbstractClass {
+public class confirmarReanudarCompra extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
+
+		
+//		Collection grup = this.getCurrentUser().get;
+//		ArrayList grupos = new ArrayList();
+//		grupos.addAll(grup);
+//
+//		boolean bandera = false;
+//		for (int i = 0; i < grupos.size(); i++) {
+//			this.addMessage(grupos.get(i).toString());
+//			if (grupos.get(i).equals("DIRECCION_TESTING")) {
+//				bandera = true;
+//			}
+//		}
+//
+//		
+//		if (!bandera){
+//			throw new BusClassException("No tiene permisos suficientes para reanudar la compra");
+//		}
+//	
 	
-		Entity currEnt = this.getCurrentEntity();
-		
-		currEnt.getAttribute("SH_COMENTARIO_APROBACION_COMPRA_STR").clear();
-		
-		
-		
 	}
 }
-
-
-

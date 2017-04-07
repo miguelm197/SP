@@ -30,6 +30,7 @@ public class init_ingresoPresupuesto extends ApiaAbstractClass {
 		currEnt.getAttribute("SH_COMENTARIODIR_PRESUPUESTO_STR").clear();
 		
 		
+		
 	}
 }
 

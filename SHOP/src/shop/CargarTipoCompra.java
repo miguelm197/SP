@@ -21,16 +21,16 @@ public class CargarTipoCompra extends ApiaAbstractClass {
 		PossibleValue pos1 = new PossibleValue("Consumo Interno", "Consumo Interno");
 		PossibleValue pos2 = new PossibleValue("Instalaciones", "Instalaciones");
 		PossibleValue pos3 = new PossibleValue("Provisiones de Cliente", "Provisiones de Cliente");
-		PossibleValue pos4 = new PossibleValue("Otros", "Otros");
+		PossibleValue pos4 = new PossibleValue("Merchandising", "Merchandising");
+		PossibleValue pos5 = new PossibleValue("Otros", "Otros");
 
 
 		tipos.addPossibleValues(pos1);
 		tipos.addPossibleValues(pos2);
 		tipos.addPossibleValues(pos3);
 		tipos.addPossibleValues(pos4);
-
+		tipos.addPossibleValues(pos5);
+	 
 		
-		
-		 
 	}
 }

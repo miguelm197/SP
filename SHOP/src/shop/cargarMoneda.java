@@ -25,5 +25,6 @@ public class cargarMoneda extends ApiaAbstractClass {
 		moneda.addPossibleValues(pos2);
 	
 
+		
 	}
 }

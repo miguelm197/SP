@@ -24,6 +24,7 @@ public class cargarIVA extends ApiaAbstractClass {
 		PossibleValue pos1 = new PossibleValue("Con IVA", "Con IVA");
 		PossibleValue pos2 = new PossibleValue("Sin IVA", "Sin IVA");
 
+		
 		tipos.addPossibleValues(pos1);
 		tipos.addPossibleValues(pos2);
 	

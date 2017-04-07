@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class cargarCuotas extends ApiaAbstractClass {
+	
 	@Override
 	protected void executeClass() throws BusClassException {
 		// currEnt.getAttribute("").clear();

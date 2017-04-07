@@ -28,7 +28,11 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 		String cantidad = currEnt.getAttribute("SH_CANTIDAD_INGRESO_COMPRA_STR").getValueAsString();
 		String fechaEstimada = currEnt.getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
 		String descripcion = currEnt.getAttribute("SH_DESCRIPCION_INGRESO_COMPRA_STR").getValueAsString();
+		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
+		String fechafin = currEnt.getAttribute("SH_FECHA_FIN_PENDIENTE_FEC").getValueAsString();
+		String comentarioAprobacion = currEnt.getAttribute("SH_COMENTARIO_APROBACION_COMPRA_STR").getValueAsString();
 
+		
 		String estado = currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").getValueAsString();
 
 		boolean notificarAvanzar = true;
@@ -52,11 +56,20 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "ADMINISTRACION_Se aprobó la compra. " + titulo,
-								"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por "
-										+ solicitante + " ha sido aprobada correctamente. <br><br>"
-
-										+ "Saludos, Apia");
+						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Presupuesto aprobado",
+								"Le notificamos que para la compra " + titulo 
+								+ " se ha <font color=green><strong>aprobado</strong></font> un presupuesto. <br><br>" 
+						// Agregar presupuesto que Direccion elegio		
+								+ "<h5>INFORMACIÓN DE LA COMPRA </h5>" 
+								+ "-<i>Compra:</i> " + titulo + "<br>" 
+								+ "-<i>Tipo:</i> " + tipo + "<br>"
+								+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+								+ "-<i>Descripción:</i> " + descripcion + "<br>"
+								+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+								
+								+ "-Solicitado por " + solicitante + "<br><br><br>" 
+								
+								+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
@@ -76,12 +89,22 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "ADMINISTRACION_Se rechazó los presupuestos. " + titulo,
-								"Hola Karen, <br> <br>"
-										+ "Confirmamos que los presupuestos de la compra solicitada por " + solicitante
-										+ " ha sido rechazada <br><br>"
+						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Presupuestos rechazados",
+								"Le notificamos que los presupuestos para la compra " + titulo
+										+ " han sido rechazados. <br><br>"
 
-										+ "Saludos, Apia");
+										+ "<h5> INFORMACIÓN DE LA COMPRA </h5>" 
+										+ "-<i>Compra:</i> " + titulo + "<br>" 
+										+ "-<i>Tipo:</i> " + tipo + "<br>"
+										+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+										+ "-<i>Descripción:</i> " + descripcion + "<br>"
+										+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+										
+										+"-Solicitado por " + solicitante + "<br><br>" 
+										
+										+ "<i>Comentario de dirección: </i>" + comentarioAprobacion + "<br><br><br>"
+
+										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
@@ -100,11 +123,22 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "ADMINISTRACION_Se colocó la compra en modo StandBy" + titulo,
-								"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por "
-										+ solicitante + " ha sido puesta en espera hasta nuevo aviso <br><br>"
-
-										+ "Saludos, Apia");
+						this.sendMail(mailEnviar, "COMPRA " + titulo + ": en StandBy",
+										"Le notificamos que para la compra " + titulo 
+										+ " se ha puesto en espera. <br><br>" 
+										
+										+ "Fecha para retomar: " +"<font color=red>" + fechafin.substring(0, 10) + "</font><br><br>"
+									
+										+ "<h5> INFORMACIÓN DE LA COMPRA </h5>" 
+										+ "-<i>Compra:</i> " + titulo + "<br>" 
+										+ "-<i>Tipo:</i> " + tipo + "<br>"
+										+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+										+ "-<i>Descripción:</i> " + descripcion + "<br>"
+										+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+										
+										+"-Solicitado por " + solicitante + "<br><br><br>" 
+										
+										+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}
@@ -124,11 +158,20 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "ADMINISTRACION_Se canceló la compra" + titulo,
-								"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por "
-										+ solicitante + " ha sido cancelada. <br><br>"
-
-										+ "Saludos, Apia");
+						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Cancelada",
+								"Le notificamos que la compra " + titulo 
+								+ " ha sido " + "<font color=red><strong>cancelada</strong></font>. <br><br>" 
+							
+								+"<h5> INFORMACIÓN DE LA COMPRA </h5>" 
+								+ "-<i>Compra:</i> " + titulo + "<br>" 
+								+ "-<i>Tipo:</i> " + tipo + "<br>"
+								+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+								+ "-<i>Descripción:</i> " + descripcion + "<br>"
+								+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+								
+								+"-Solicitado por " + solicitante + "<br><br><br>"
+								
+								+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 					}
 				}
 			}

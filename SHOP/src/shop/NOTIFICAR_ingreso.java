@@ -29,6 +29,13 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 		String fechaEstimada = currEnt.getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
 		String descripcion = currEnt.getAttribute("SH_DESCRIPCION_INGRESO_COMPRA_STR").getValueAsString();
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
+		
+		
+		
+		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+		Date fechaActual = new Date();
+		String fecha = formatoFecha.format(fechaActual);
+	
 
 		String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
 		Collection<User> usuarios = null;
@@ -45,18 +52,20 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "ADMINISTRACION_Se agregó una nueva compra " + titulo,
-							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-									+ " se ha ingresado correctamente. <br><br>" + "Información de la compra: <br>"
+					this.sendMail(mailEnviar, "NUEVA COMPRA " + titulo,
+									"Le notificamos que se ha ingresado una nueva compra solicitada por " + solicitante + "<br><br>" 
+									
+									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+									+ "-<i>Fecha de ingreso:</i> " + fecha + "<br>"
+									+ "-<i>Compra:</i> " + titulo + "<br>" 
+									+ "-<i>Tipo:</i> " + tipo + "<br>"
+									+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+									+ "-<i>Descripción:</i> " + descripcion + "<br>"
+									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 
-									+ "---------------------------------------------------------- <br>"
-									+ "		Titulo: " + titulo + "<br>" + "		Tipo: " + tipo + "<br>"
-									+ "		Solicitante: " + solicitante + "<br>" + "		Fecha estimada: "
-									+ fechaEstimada.substring(0, 10) + "<br>" + "		Descripcion: " + descripcion + "<br>"
-									+ "		Comentario: " + comentario + " <br><br>"
-									+ "---------------------------------------------------------- <br><br>"
+									+ "Fecha límite de aprobación: " +  "<font color=red>" + fechaEstimada.substring(0, 10) + "</font><br><br><br>"
 
-									+ "Saludos, Apia");
+									+"<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
 

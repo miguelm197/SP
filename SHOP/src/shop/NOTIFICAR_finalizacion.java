@@ -24,7 +24,13 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 
 		String titulo = currEnt.getAttribute("SH_TITULO_INGRESO_COMPRA_STR").getValueAsString();
 		String solicitante = currEnt.getAttribute("SH_SOLICITANTE_INGRESO_COMPRA_STR").getValueAsString();
+		String tipo = currEnt.getAttribute("SH_TIPO_INGRESO_COMPRA_STR").getValueAsString();
+		String cantidad = currEnt.getAttribute("SH_CANTIDAD_INGRESO_COMPRA_STR").getValueAsString();
+		String fechaEstimada = currEnt.getAttribute("SH_FECHAFIN_INGRESO_COMPRA_FEC").getValueAsString();
+		String descripcion = currEnt.getAttribute("SH_DESCRIPCION_INGRESO_COMPRA_STR").getValueAsString();
+		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
 
+		
 		boolean notificar = false;
 
 		if (notificar) {
@@ -40,11 +46,18 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "ADMINISTRACION, DIRECCION_Se finalizó la compra " + titulo,
-							"Hola Karen, <br> <br>" + "Confirmamos que la nueva compra solicitada por " + solicitante
-									+ " ha sido finalizada correctamente. <br><br>"
+					this.sendMail(mailEnviar, "COMPRA " + titulo + ": Finalizada",
+							"Le notificamos que la compra " + titulo + ", solicitada por " + solicitante + 
+							", ha sido finalizada con éxito. <br><br>"
 
-									+ "Saludos, Apia");
+									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+									+ "-<i>Compra:</i> " + titulo + "<br>" 
+									+ "-<i>Tipo:</i> " + tipo + "<br>"
+									+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+									+ "-<i>Descripción:</i> " + descripcion + "<br>"
+									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+
+									+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
 				}
 			}
 		}
