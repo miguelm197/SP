@@ -41,6 +41,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 			monedita = "U$D";
 		}
 
+		
 		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 		Date fechaActual = new Date();
 		String fechaSol = formatoFecha.format(fechaActual);
