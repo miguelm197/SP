@@ -35,16 +35,22 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 		
 		String estado = currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").getValueAsString();
 
-		boolean notificarAvanzar = true;
-		boolean notificarPresupuesto = true;
-		boolean notificarDormir = true;
-		boolean notificarCancelar = true;
+		boolean notificarAvanzar = false;
+		boolean notificarPresupuesto = false;
+		boolean notificarDormir = false;
+		boolean notificarCancelar = false;
+		
+//		boolean notificarAvanzar = true;
+//		boolean notificarPresupuesto = true;
+//		boolean notificarDormir = true;
+//		boolean notificarCancelar = true;
 
 		switch (estado) {
 		case "1": // AVANZAR
 
 			if (notificarAvanzar) {
 				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+				
 				Collection<User> usuarios = null;
 
 				for (int i = 0; i < gruposNotificar.length; i++) {

@@ -30,7 +30,8 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
 	
 		
-		boolean notificar=true;
+		boolean notificar=false;
+		//boolean notificar=true;
 		
 		String[] gruposNotificar = { "ADMINISTRACION_TESTING", "DIRECCION_TESTING"};
 		Collection<User> usuarios = null;
