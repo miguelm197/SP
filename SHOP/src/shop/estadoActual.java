@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -25,6 +26,7 @@ public class estadoActual extends ApiaAbstractClass {
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
 		String estado = currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").getValueAsString();
 
+		
 	
 		switch (nomTask) {
 
@@ -77,5 +79,12 @@ public class estadoActual extends ApiaAbstractClass {
 			break;
 
 		}
+		
+		
+		
+		String estadoActual = currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").getValueAsString();
+		Collection esta = currEnt.getAttribute("SH_INFO_ESTADO_ACTUAL_STR").getValues();
+		esta.add(estadoActual);
+		currEnt.getAttribute("SH_INFO_ESTADO_ACTUAL_STR").setValues(esta);
 	}
 }
