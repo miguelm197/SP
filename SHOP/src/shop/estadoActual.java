@@ -86,5 +86,9 @@ public class estadoActual extends ApiaAbstractClass {
 		Collection esta = currEnt.getAttribute("SH_INFO_ESTADO_ACTUAL_STR").getValues();
 		esta.add(estadoActual);
 		currEnt.getAttribute("SH_INFO_ESTADO_ACTUAL_STR").setValues(esta);
+		
+		
+		
+		
 	}
 }
