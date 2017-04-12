@@ -37,10 +37,11 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 		String fecha = formatoFecha.format(fechaActual);
 	
 
-		String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+		String[] gruposNotificar = { "DIRECCION_TESTING" };
 		Collection<User> usuarios = null;
 
 		boolean notificar = true;
+		//boolean notificar = true;
 
 		if (notificar) {
 			for (int i = 0; i < gruposNotificar.length; i++) {
