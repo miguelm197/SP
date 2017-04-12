@@ -46,7 +46,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		Date fechaActual = new Date();
 		String fechaSol = formatoFecha.format(fechaActual);
 
-		boolean notificar = false;
+		boolean notificar = true;
 		//boolean notificar = true;
 
 		if (notificar) {

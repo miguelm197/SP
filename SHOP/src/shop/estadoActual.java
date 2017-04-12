@@ -87,6 +87,19 @@ public class estadoActual extends ApiaAbstractClass {
 		esta.add(estadoActual);
 		currEnt.getAttribute("SH_INFO_ESTADO_ACTUAL_STR").setValues(esta);
 		
+		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		Date fechaActual = new Date();
+		String FechaActS = formatoFecha.format(fechaActual);
+		
+		try {
+			fechaActual = formatoFecha.parse(FechaActS);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		Collection fech = currEnt.getAttribute("SH_INFO_FECHA_DIRECCION_FEC").getValues();
+		fech.add(fechaActual);
+		currEnt.getAttribute("SH_INFO_FECHA_DIRECCION_FEC").setValues(fech);
 		
 		
 		

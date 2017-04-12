@@ -8,9 +8,12 @@ import com.dogma.busClass.object.PossibleValue;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 
 public class confirmarIngresoCompra extends ApiaAbstractClass {
 	@Override
@@ -30,25 +33,17 @@ public class confirmarIngresoCompra extends ApiaAbstractClass {
 		Date fechaEst = null;
 		Date fechaAct = null;
 		String FechaActS = formatoFecha.format(fechaActual);
-	
-		
-		
+
 		try {
 			fechaEst = formatoFecha.parse(fechaEstimada);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
-		/* if (fechaEst.after(fechaActual)) {
-
-			System.out.println("Sape");
-
-			this.getCurrentEntity().getAttribute("SH_FECHA_INGRESO_STR").setValue(FechaActS);
-
-		} else {
-			throw new BusClassException("Fecha no puede ser anterior a la actual");
-		} */
-
+		
+		
+	
+		
+			
 		int cant;
 
 		try {
