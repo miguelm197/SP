@@ -73,7 +73,7 @@ public class RO_cargarInfoGral extends ApiaAbstractClass {
 			Collection att1 = ent.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").getValues();
 			Collection att2 = ent.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").getValues();
 			Collection att3 = ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
-			Collection att4	 = ent.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
+			Collection att4	= ent.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 			Collection att5 = ent.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").getValues();
 			Collection att6 = ent.getAttribute("SH_FAVORITOADMIN_PRESUPUESTO_INFO_STR").getValues();
 

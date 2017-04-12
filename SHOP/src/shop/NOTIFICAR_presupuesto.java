@@ -96,7 +96,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 				}
 			}
 
-		} else {
+		} /* else {
 			if (notificarPresupuesto) {
 				String[] gruposNotificar = { "ADMINISTRACION" };
 				Collection<User> usuarios = null;
@@ -126,7 +126,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 					}
 				}
 			}
-		} 
+		} */
 
 	}
 
