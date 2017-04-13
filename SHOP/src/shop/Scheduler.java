@@ -24,6 +24,8 @@ public class Scheduler extends ApiaAbstractClass {
 		int number = 1;
 		String postFix = null;
 
+		
+		
 		Entity ent = this.getEntity(entType, preFix, number, postFix);
 		Collection presupuestos = ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList presu = new ArrayList();
