@@ -39,12 +39,18 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 		boolean notificarPresupuesto = true;
 		boolean notificarDormir = true;
 		boolean notificarCancelar = true;
+		
+//		boolean notificarAvanzar = true;
+//		boolean notificarPresupuesto = true;
+//		boolean notificarDormir = true;
+//		boolean notificarCancelar = true;
 
 		switch (estado) {
 		case "1": // AVANZAR
 
 			if (notificarAvanzar) {
 				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+				
 				Collection<User> usuarios = null;
 
 				for (int i = 0; i < gruposNotificar.length; i++) {

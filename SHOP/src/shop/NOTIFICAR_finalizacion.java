@@ -35,7 +35,7 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 		//boolean notificar = false;
 
 		if (notificar) {
-			String[] gruposNotificar = { "DIRECCION_TESTING" };
+			String[] gruposNotificar = { "DIRECCION" };
 			Collection<User> usuarios = null;
 
 			for (int i = 0; i < gruposNotificar.length; i++) {

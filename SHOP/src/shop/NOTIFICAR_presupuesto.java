@@ -70,7 +70,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 			// ENVIO A DIRECCION
 
 			if (notificarAprobacion) {
-				String[] gruposNotificar = { "DIRECCION_TESTING" };
+				String[] gruposNotificar = { "DIRECCION" };
 				Collection<User> usuarios = null;
 
 
@@ -96,9 +96,9 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 				}
 			}
 
-		} else {
+		} /* else {
 			if (notificarPresupuesto) {
-				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+				String[] gruposNotificar = { "ADMINISTRACION" };
 				Collection<User> usuarios = null;
 
 				for (int i = 0; i < gruposNotificar.length; i++) {
@@ -126,7 +126,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 					}
 				}
 			}
-		}
+		} */
 
 	}
 

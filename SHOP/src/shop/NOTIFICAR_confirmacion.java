@@ -49,7 +49,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 		case "1": // AVANZAR
 
 			if (notificarAvanzar) {
-				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
+				String[] gruposNotificar = { "ADMINISTRACION" };
 				
 				Collection<User> usuarios = null;
 
@@ -83,7 +83,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 			break;
 		case "2": // VOLVER A PRESUPUESTO
 			if (notificarPresupuesto) {
-				String[] gruposNotificar1 = { "ADMINISTRACION_TESTING" };
+				String[] gruposNotificar1 = { "ADMINISTRACION" };
 				Collection<User> usuarios1 = null;
 
 				for (int i = 0; i < gruposNotificar1.length; i++) {
@@ -117,7 +117,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 			break;
 		case "3": // DORMIR
 			if (notificarDormir) {
-				String[] gruposNotificar11 = { "ADMINISTRACION_TESTING" };
+				String[] gruposNotificar11 = { "ADMINISTRACION" };
 				Collection<User> usuarios11 = null;
 
 				for (int i = 0; i < gruposNotificar11.length; i++) {
@@ -152,7 +152,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 			break;
 		case "4": // CANCELAR
 			if (notificarCancelar) {
-				String[] gruposNotificar111 = { "ADMINISTRACION_TESTING" };
+				String[] gruposNotificar111 = { "ADMINISTRACION" };
 				Collection<User> usuarios111 = null;
 
 				for (int i = 0; i < gruposNotificar111.length; i++) {

@@ -50,7 +50,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		//boolean notificar = true;
 
 		if (notificar) {
-			String[] gruposNotificar = { "ADMINISTRACION_TESTING", "DIRECCION_TESTING" };
+			String[] gruposNotificar = { "ADMINISTRACION", "DIRECCION" };
 			Collection<User> usuarios = null;
 
 			for (int i = 0; i < gruposNotificar.length; i++) {

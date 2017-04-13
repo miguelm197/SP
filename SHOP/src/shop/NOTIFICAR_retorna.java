@@ -33,7 +33,7 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 		boolean notificar=true;
 		//boolean notificar=true;
 		
-		String[] gruposNotificar = { "ADMINISTRACION_TESTING", "DIRECCION_TESTING"};
+		String[] gruposNotificar = { "ADMINISTRACION", "DIRECCION"};
 		Collection<User> usuarios = null;
 
 		if (notificar){

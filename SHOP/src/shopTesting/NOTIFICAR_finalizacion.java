@@ -31,7 +31,8 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 		String comentario = currEnt.getAttribute("SH_COMENTARIO_INGRESO_COMPRA_STR").getValueAsString();
 
 		
-		boolean notificar = false;
+		boolean notificar = true;
+		//boolean notificar = false;
 
 		if (notificar) {
 			String[] gruposNotificar = { "DIRECCION_TESTING" };

@@ -63,6 +63,8 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 		boolean notificarPresupuesto = false;
 		boolean notificarAprobacion = true;
+//		boolean notificarPresupuesto = false;
+//		boolean notificarAprobacion = true;
 
 		if (envDir.equals("true")) {
 			// ENVIO A DIRECCION
