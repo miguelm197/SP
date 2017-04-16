@@ -1,4 +1,4 @@
-package shop;
+package shopTesting;
 
 import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
@@ -15,26 +15,21 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Scheduler extends ApiaAbstractClass {
+public class cargarEstadoModificacion extends ApiaAbstractClass {
+	
 	@Override
 	protected void executeClass() throws BusClassException {
+		// currEnt.getAttribute("").clear();
+		Attribute tipos = this.getCurrentEntity().getAttribute("SH_ESTADO_MODIFICACION");
 
-		String entType = "SHOP";
-		String preFix = null;
-		int number = 1;
-		String postFix = null;
+		PossibleValue pos1 = new PossibleValue("1", "Información general");
+		PossibleValue pos2 = new PossibleValue("2", "Solicitud de Compra");
+		PossibleValue pos3 = new PossibleValue("3", "Finalización de Compra");
+
+		tipos.addPossibleValues(pos1);
+		tipos.addPossibleValues(pos2);
+		tipos.addPossibleValues(pos3);
 	
-		Entity ent = this.getEntity(entType, preFix, number, postFix);
-		Collection presupuestos = ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
-		ArrayList presu = new ArrayList();
-		presu.addAll(presupuestos);
 		
-		presu.set(2, "$U 10919");
-		
-		ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(presu);
-		
-		/*
-		 * 9882 Diser 8950 + Iva 10919                 
-		 */
 	}
 }
