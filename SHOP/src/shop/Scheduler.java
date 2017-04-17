@@ -42,7 +42,6 @@ public class Scheduler extends ApiaAbstractClass {
 		ArrayList comentarios = new ArrayList();
 		comentarios.addAll(come);
 		
-		
 		int index = 0;
 		
 		proveedores.set(index, "$U 10919");

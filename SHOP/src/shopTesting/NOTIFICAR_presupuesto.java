@@ -22,8 +22,6 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 		Entity currEnt = this.getCurrentEntity();
 
-
-		
 		Collection prov = this.getCurrentEntity().getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList proveedores = new ArrayList();
 		proveedores.addAll(prov);
@@ -62,17 +60,15 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
 
 		boolean notificarPresupuesto = false;
-		boolean notificarAprobacion = true;
-//		boolean notificarPresupuesto = false;
-//		boolean notificarAprobacion = true;
+		boolean notificarEnvDireccion = true;
 
 		if (envDir.equals("true")) {
 			// ENVIO A DIRECCION
-
-			if (notificarAprobacion) {
+			// ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+			// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+			if (notificarEnvDireccion) {
 				String[] gruposNotificar = { "DIRECCION_TESTING" };
 				Collection<User> usuarios = null;
-
 
 				for (int i = 0; i < gruposNotificar.length; i++) {
 					usuarios = this.getGroup(gruposNotificar[i]).getUsers();
@@ -95,8 +91,11 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 					}
 				}
 			}
+			// --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 		} else {
+
+			// --------------------------------------------------------------------------------------------------------------------------------------------------------------
 			if (notificarPresupuesto) {
 				String[] gruposNotificar = { "ADMINISTRACION_TESTING" };
 				Collection<User> usuarios = null;
@@ -126,6 +125,8 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 					}
 				}
 			}
+			// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 		}
 
 	}

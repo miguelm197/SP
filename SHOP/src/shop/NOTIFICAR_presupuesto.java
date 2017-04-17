@@ -62,14 +62,14 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
 
 		boolean notificarPresupuesto = false;
-		boolean notificarAprobacion = true;
-//		boolean notificarPresupuesto = false;
-//		boolean notificarAprobacion = true;
+		boolean enviDireccion = true;
 
+
+		
 		if (envDir.equals("true")) {
 			// ENVIO A DIRECCION
 
-			if (notificarAprobacion) {
+			if (enviDireccion) {
 				String[] gruposNotificar = { "DIRECCION" };
 				Collection<User> usuarios = null;
 
