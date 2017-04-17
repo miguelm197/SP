@@ -25,13 +25,36 @@ public class Scheduler extends ApiaAbstractClass {
 		String postFix = null;
 	
 		Entity ent = this.getEntity(entType, preFix, number, postFix);
-		Collection presupuestos = ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
-		ArrayList presu = new ArrayList();
-		presu.addAll(presupuestos);
 		
-		presu.set(2, "$U 10919");
+		Collection prov = ent.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").getValues();
+		ArrayList proveedores = new ArrayList();
+		proveedores.addAll(prov);
 		
-		ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(presu);
+		Collection mont = ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
+		ArrayList montos = new ArrayList();
+		montos.addAll(mont);
+		
+		Collection cump = ent.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").getValues();
+		ArrayList cumplimientos = new ArrayList();
+		cumplimientos.addAll(cump);
+		
+		Collection come = ent.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
+		ArrayList comentarios = new ArrayList();
+		comentarios.addAll(come);
+		
+		
+		int index = 0;
+		
+		proveedores.set(index, "$U 10919");
+		proveedores.set(index, "$U 10919");
+		proveedores.set(index, "$U 10919");
+		proveedores.set(index, "$U 10919");
+		
+		
+		ent.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").setValues(proveedores);
+		ent.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(montos);
+		ent.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").setValues(cumplimientos);
+		ent.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(comentarios);
 		
 		/*
 		 * 9882 Diser 8950 + Iva 10919                 

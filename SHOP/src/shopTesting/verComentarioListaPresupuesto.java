@@ -19,7 +19,8 @@ public class verComentarioListaPresupuesto extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 	
-		//Hola, no exploté :)
+		//Hola, no explote :)
+		
 		
 		
 
