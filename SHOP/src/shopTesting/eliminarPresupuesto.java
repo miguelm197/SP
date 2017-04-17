@@ -27,6 +27,12 @@ public class eliminarPresupuesto extends ApiaAbstractClass{
 		Collection comPres = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList comPresArr = new ArrayList<>();
 		comPresArr.addAll(comPres);
+		Collection pdfPres = currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").getValues();
+		ArrayList pdfPresArr = new ArrayList<>();
+		pdfPresArr.addAll(pdfPres);
+		Collection favPres = currEnt.getAttribute("SH_FAVORITOADMIN_PRESUPUESTO_INFO_STR").getValues();
+		ArrayList favPresArr = new ArrayList<>();
+		favPresArr.addAll(favPres);
 		
 		Field currBtn = (Field)this.getEvtSource();
 		int index = currBtn.getFireIndex();
@@ -35,11 +41,15 @@ public class eliminarPresupuesto extends ApiaAbstractClass{
 		cumpPresArr.remove(index);
 		mntPresArr.remove(index);
 		comPresArr.remove(index);
+		pdfPresArr.remove(index);
+		favPresArr.remove(index);
 		
 		currEnt.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").setValues(provPresArr);
 		currEnt.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").setValues(cumpPresArr);
 		currEnt.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(mntPresArr);
 		currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(comPresArr);
+		currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").setValues(pdfPresArr);
+		currEnt.getAttribute("SH_FAVORITOADMIN_PRESUPUESTO_INFO_STR").setValues(favPresArr);
 		
 		
 	}
