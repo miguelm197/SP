@@ -47,6 +47,13 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 			String moneda = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
 
+			int ind = getCurrentEntity().getForm("").getField(" ").getFieldId();
+			String asd = getCurrentEntity().getAttribute("").getValue(3).toString();
+		
+ 			
+			
+			
+			
 			if (proveedor != "" && monto != "") {
 
 				String monedita;
