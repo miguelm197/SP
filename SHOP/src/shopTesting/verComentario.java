@@ -12,7 +12,7 @@ public class verComentario extends ApiaAbstractClass{
 		Field currBtn = (Field) this.getEvtSource();
 		int index = currBtn.getFireIndex();
 		
-		String comentario = this.getCurrentEntity().getAttribute("SH_COMENTARIO_PRESUPUESTO_INFOCOPIA_STR").getValueAsString(index);
+		String comentario = this.getCurrentEntity().getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValueAsString(index);
 		
 		this.addMessage(comentario);
 	}

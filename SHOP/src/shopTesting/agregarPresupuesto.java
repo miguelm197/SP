@@ -95,9 +95,6 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					Collection come = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 					come.add(comentario);
 					
-					Collection comeCopia = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFOCOPIA_STR").getValues();
-					comeCopia.add(comentario);
-					
 					
 					// Collection mone =
 					// currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").getValues();
@@ -114,7 +111,6 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					currEnt.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(mont);
 					// currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").setValues(mone);
 					currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(come);
-					currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFOCOPIA_STR").setValues(comeCopia);
 					currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").setValue("Con IVA");
  
 				}
