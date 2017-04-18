@@ -116,7 +116,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(come);
 					currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFOCOPIA_STR").setValues(comeCopia);
 					currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").setValue("Con IVA");
-
+ 
 				}
 			}
 
