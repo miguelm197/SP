@@ -53,13 +53,18 @@ public class eliminarPresupuesto extends ApiaAbstractClass {
 		 * this.addMessage("pdfPres: "+ pdfPresArr.size());
 		 * this.addMessage("favPres: "+ favPresArr.size());
 		 */
-		
+
 		provPresArr.remove(index);
 		cumpPresArr.remove(index);
 		mntPresArr.remove(index);
 		comPresArr.remove(index);
-		//pdfPresArr.remove(index);
 		favPresArr.remove(index);
+
+		try {
+			pdfPresArr.remove(index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		currEnt.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").setValues(
 				provPresArr);
