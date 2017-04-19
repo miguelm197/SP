@@ -23,6 +23,9 @@ public class eliminarPresupuesto extends ApiaAbstractClass {
 				"SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList cumpPresArr = new ArrayList<>();
 		cumpPresArr.addAll(cumpPres);
+		
+		
+		
 		Collection mntPres = currEnt.getAttribute(
 				"SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList mntPresArr = new ArrayList<>();

@@ -86,7 +86,15 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 					Collection come = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 					come.add(comentario);
 					
+<<<<<<< HEAD
 //			
+=======
+					
+					// Collection mone =
+					// currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_INFO_STR").getValues();
+					// mone.add(moneda);
+
+>>>>>>> branch 'master' of https://github.com/miguelm197/SP
 				
 
 					// Se setean (cargan) las nuevas colecciones a los atributos
