@@ -47,16 +47,6 @@ public class eliminarPresupuesto extends ApiaAbstractClass {
 		Field currBtn = (Field) this.getEvtSource();
 		int index = currBtn.getFireIndex();
 
-		/*
-		 * this.addMessage("index: "+index);
-		 * 
-		 * this.addMessage("provPres: "+ provPresArr.size());
-		 * this.addMessage("cumpPres: "+ cumpPresArr.size());
-		 * this.addMessage("mntPres: "+ mntPresArr.size());
-		 * this.addMessage("comPres: "+ comPresArr.size());
-		 * this.addMessage("pdfPres: "+ pdfPresArr.size());
-		 * this.addMessage("favPres: "+ favPresArr.size());
-		 */
 
 		provPresArr.remove(index);
 		cumpPresArr.remove(index);
@@ -66,6 +56,8 @@ public class eliminarPresupuesto extends ApiaAbstractClass {
 
 		try {
 			pdfPresArr.remove(index);
+			currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").setValues(
+					pdfPresArr);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -78,8 +70,7 @@ public class eliminarPresupuesto extends ApiaAbstractClass {
 				mntPresArr);
 		currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(
 				comPresArr);
-		currEnt.getAttribute("SH_COMPROBANTE_PRESUPUESTO_INFO_STR").setValues(
-				pdfPresArr);
+
 		currEnt.getAttribute("SH_FAVORITOADMIN_PRESUPUESTO_INFO_STR")
 				.setValues(favPresArr);
 
