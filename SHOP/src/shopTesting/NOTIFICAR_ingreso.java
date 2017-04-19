@@ -53,7 +53,7 @@ public class NOTIFICAR_ingreso extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "NUEVA COMPRA " + titulo,
+					this.sendMail(mailEnviar, "TESTING | NUEVA COMPRA " + titulo,
 									"Le notificamos que se ha ingresado una nueva compra solicitada por " + solicitante + "<br><br>" 
 									
 									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 

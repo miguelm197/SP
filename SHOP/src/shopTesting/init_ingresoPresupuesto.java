@@ -31,6 +31,7 @@ public class init_ingresoPresupuesto extends ApiaAbstractClass {
 		
 		
 		
+		
 	}
 }
 

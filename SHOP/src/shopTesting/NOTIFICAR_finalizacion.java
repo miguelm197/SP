@@ -47,7 +47,7 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "COMPRA " + titulo + ": Finalizada",
+					this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": Finalizada",
 							"Le notificamos que la compra " + titulo + ", solicitada por " + solicitante + 
 							", ha sido finalizada con éxito. <br><br>"
 

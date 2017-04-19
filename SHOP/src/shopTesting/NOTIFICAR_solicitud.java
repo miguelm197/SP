@@ -63,7 +63,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar, "COMPRA " + titulo + ": en ejecución. ",
+					this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en ejecución. ",
 							"Le notificamos que la compra " + titulo + " esta siendo solicitada al proveedor. <br><br>"
 
 									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"

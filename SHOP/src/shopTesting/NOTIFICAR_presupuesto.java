@@ -78,7 +78,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 					String mail = u.getEmail();
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
-						this.sendMail(mailEnviar, "COMPRA " + titulo + ": en espera de ser aprobada. ",
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en espera de ser aprobada. ",
 								"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
 										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
 										+ "-<i>Tipo:</i> " + tipo + "<br>" + "-<i>Cantidad:</i> " + cantidad + "<br>"
@@ -109,7 +109,7 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "COMPRA " + titulo + ": nuevo presupuesto",
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": nuevo presupuesto",
 								"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
 
 										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"

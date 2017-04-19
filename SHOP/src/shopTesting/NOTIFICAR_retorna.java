@@ -46,7 +46,7 @@ public class NOTIFICAR_retorna extends ApiaAbstractClass {
 				if (mail.compareTo("") != 0) {
 					String[] mailEnviar = { mail };
 
-					this.sendMail(mailEnviar,  "COMPRA " + titulo + ": Retomada",
+					this.sendMail(mailEnviar,  "TESTING | COMPRA " + titulo + ": Retomada",
 							"Le notificamos que la compra " + titulo 
 							+ " ha sido retornada. <br><br>" 
 							

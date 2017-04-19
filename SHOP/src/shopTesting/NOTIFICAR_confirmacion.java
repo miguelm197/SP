@@ -62,7 +62,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Presupuesto aprobado",
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": Presupuesto aprobado",
 								"Le notificamos que para la compra " + titulo 
 								+ " se ha <font color=green><strong>aprobado</strong></font> un presupuesto. <br><br>" 
 						// Agregar presupuesto que Direccion elegio		
@@ -95,7 +95,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Presupuestos rechazados",
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": Presupuestos rechazados",
 								"Le notificamos que los presupuestos para la compra " + titulo
 										+ " han sido rechazados. <br><br>"
 
@@ -129,7 +129,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "COMPRA " + titulo + ": en StandBy",
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en StandBy",
 										"Le notificamos que para la compra " + titulo 
 										+ " se ha puesto en espera. <br><br>" 
 										
@@ -164,7 +164,7 @@ public class NOTIFICAR_confirmacion extends ApiaAbstractClass {
 					if (mail.compareTo("") != 0) {
 						String[] mailEnviar = { mail };
 
-						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Cancelada",
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": Cancelada",
 								"Le notificamos que la compra " + titulo 
 								+ " ha sido " + "<font color=red><strong>cancelada</strong></font>. <br><br>" 
 							
