@@ -31,6 +31,7 @@ public class eliminarPresupuesto extends ApiaAbstractClass {
 				"SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList comPresArr = new ArrayList<>();
 		comPresArr.addAll(comPres);
+		
 		Collection pdfPres = currEnt.getAttribute(
 				"SH_COMPROBANTE_PRESUPUESTO_INFO_STR").getValues();
 		ArrayList pdfPresArr = new ArrayList<>();
