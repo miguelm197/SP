@@ -70,7 +70,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 									+ "-<i>Cantidad:</i> " + cantidad + "<br>" + "-<i>Proveedor:</i> " + proveedor
 									+ "<br>" + "-<i>Forma de pago:</i> " + formapago + "<br><br>"
 
-									+ "-<i>Total:</i> " + monedita + " " + monto + "<br><br>"
+									+ "-<i>Total:</i>" + monto + "<br><br>"
 
 									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
 
