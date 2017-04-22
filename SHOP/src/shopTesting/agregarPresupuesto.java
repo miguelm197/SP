@@ -17,25 +17,20 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class agregarPresupuesto extends ApiaAbstractClass {
-	
+
 	@Override
 	protected void executeClass() throws BusClassException {
-		// currEnt.getAttribute("").clear();
-
 
 		Entity currEnt = this.getCurrentEntity();
 		String envDir = currEnt.getAttribute("SH_FINPRESUPUESTO_PRESUPUESTO_COMPRA_STR").getValuesAsString();
-		
 
 		String iva = currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").getValueAsString();
 		String suma = currEnt.getAttribute("SH_MONTO_MAS_IVA_PRESUPUESTOS_STR").getValueAsString();
-		
-	
 
 		if (envDir.equals("false")) {
 			if (iva.equals("Sin IVA")) {
 				currEnt.getAttribute("SH_MONTO_PRESUPUESTO_COMPRA_STR").setValue(suma);
-		}
+			}
 			// Se obtiene los valores de los campos
 			String proveedor = currEnt.getAttribute("SH_PROVEEDOR_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String cumplimiento = currEnt.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_COMPRA_STR").getValueAsString();
@@ -43,8 +38,6 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 			String moneda = currEnt.getAttribute("SH_MONEDA_PRESUPUESTO_COMPRA_STR").getValueAsString();
 			String comentario = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_COMPRA_STR").getValueAsString();
 
-
-			
 			if (proveedor != "" && monto != "") {
 
 				String monedita;
@@ -56,7 +49,6 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 
 				boolean bandera = true;
 				double mon;
-				int cum;
 
 				try {
 					mon = Double.parseDouble(monto);
@@ -70,10 +62,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 				}
 
 				if (bandera == true) {
-					// Se obtiene la coleccion de los atributos de la tabla y se
-					// le
-					// agregan
-					// los atributos nuevos
+
 					Collection prov = currEnt.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").getValues();
 					prov.add(proveedor);
 
@@ -82,20 +71,16 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 
 					Collection mont = currEnt.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").getValues();
 					mont.add(monedita + " " + monto);
-					
+
 					Collection come = currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").getValues();
 					come.add(comentario);
-					
-					// Se setean (cargan) las nuevas colecciones a los atributos
-					// de
-					// la
-					// tabla
+
 					currEnt.getAttribute("SH_PROVEEDOR_PRESUPUESTO_INFO_STR").setValues(prov);
 					currEnt.getAttribute("SH_CUMPLIMIENTO_PRESUPUESTO_INFO_STR").setValues(cump);
 					currEnt.getAttribute("SH_MONTO_PRESUPUESTO_INFO_STR").setValues(mont);
 					currEnt.getAttribute("SH_COMENTARIO_PRESUPUESTO_INFO_STR").setValues(come);
 					currEnt.getAttribute("SH_IVA_PRESUPUESTO_STR").setValue("Con IVA");
- 
+
 				}
 			}
 
@@ -115,6 +100,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 			if (cont == 0) {
 				throw new BusClassException("Debe seleccionar al menos 1 favorito");
 			}
+
 			String nomUser = this.getCurrentUser().getName();
 			String coment = currEnt.getAttribute("SH_COMENTARIODIR_PRESUPUESTO_STR").getValueAsString();
 
@@ -130,7 +116,7 @@ public class agregarPresupuesto extends ApiaAbstractClass {
 
 			currEnt.getAttribute("SH_ESTADO_APROBACION_COMPRA_STR").setValue("Avanzar");
 
-}
+		}
 
 	}
 }
