@@ -21,7 +21,7 @@ public class versionado extends ApiaAbstractClass {
 	
 		
 		
-		this.getCurrentEntity().getAttribute("SH_VERSION_NUM").setValue("Version: 1.1");
+		this.getCurrentEntity().getAttribute("SH_VERSION_NUM").setValue("Version: 1.2");
 		
 
 

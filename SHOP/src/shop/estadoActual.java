@@ -38,7 +38,7 @@ public class estadoActual extends ApiaAbstractClass {
 			if (envDir.equals("false")) {
 				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Ingreso de presupuestos");
 			} else {
-				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Aprobación de compra, en Dirección");
+				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("En Dirección");
 			}
 
 		case "SH_APROBAR_COMPRA":
@@ -65,6 +65,7 @@ public class estadoActual extends ApiaAbstractClass {
 				break;
 			}
 			break;
+			
 			
 		case "SH_PENDIENTE_COMPRA":
 			currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Retornada");

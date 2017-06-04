@@ -33,12 +33,14 @@ public class estadoActual extends ApiaAbstractClass {
 		case "SH_INGRESO_COMPRA":
 			currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Ingreso de presupuestos");
 			break;
-
+     
+			
 		case "SH_PRESUPUESTOS_COMPRA":
+			
 			if (envDir.equals("false")) {
 				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Ingreso de presupuestos");
 			} else {
-				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("Aprobación de compra, en Dirección");
+				currEnt.getAttribute("SH_ESTADO_ACTUAL_STR").setValue("En Dirección");
 			}
 
 		case "SH_APROBAR_COMPRA":

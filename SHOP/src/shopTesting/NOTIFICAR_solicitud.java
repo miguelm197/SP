@@ -40,7 +40,7 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 		} else {
 			monedita = "U$D";
 		} */
-
+ 
 		
 		DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 		Date fechaActual = new Date();
@@ -54,29 +54,28 @@ public class NOTIFICAR_solicitud extends ApiaAbstractClass {
 			Collection<User> usuarios = null;
 
 			for (int i = 0; i < gruposNotificar.length; i++) {
-
 				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-			}
-
-			for (User u : usuarios) {
-				String mail = u.getEmail();
-				if (mail.compareTo("") != 0) {
-					String[] mailEnviar = { mail };
-
-					this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en ejecución. ",
-							"Le notificamos que la compra " + titulo + " esta siendo solicitada al proveedor. <br><br>"
-
-									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
-									+ "-<i>Cantidad:</i> " + cantidad + "<br>" + "-<i>Proveedor:</i> " + proveedor
-									+ "<br>" + "-<i>Forma de pago:</i> " + formapago + "<br><br>"
-
-									+ "-<i>Total:</i> " + monto + "<br><br>"
-
-									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
-
-									+ "-Fecha de solicitud: " + fechaSol.substring(0, 10) + "<br><br><br>"
-
-									+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+			
+				for (User u : usuarios) {
+					String mail = u.getEmail();
+					if (mail.compareTo("") != 0) {
+						String[] mailEnviar = { mail };
+	
+						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en ejecución. ",
+								"Le notificamos que la compra " + titulo + " esta siendo solicitada al proveedor. <br><br>"
+	
+										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
+										+ "-<i>Cantidad:</i> " + cantidad + "<br>" + "-<i>Proveedor:</i> " + proveedor
+										+ "<br>" + "-<i>Forma de pago:</i> " + formapago + "<br><br>"
+	
+										+ "-<i>Total:</i> " + monto + "<br><br>"
+	
+										+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+	
+										+ "-Fecha de solicitud: " + fechaSol.substring(0, 10) + "<br><br><br>"
+	
+										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+					}
 				}
 			}
 		}

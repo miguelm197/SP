@@ -40,25 +40,25 @@ public class NOTIFICAR_finalizacion extends ApiaAbstractClass {
 
 			for (int i = 0; i < gruposNotificar.length; i++) {
 				usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-			}
-
-			for (User u : usuarios) {
-				String mail = u.getEmail();
-				if (mail.compareTo("") != 0) {
-					String[] mailEnviar = { mail };
-
-					this.sendMail(mailEnviar, "COMPRA " + titulo + ": Finalizada",
-							"Le notificamos que la compra " + titulo + ", solicitada por " + solicitante + 
-							", ha sido finalizada con éxito. <br><br>"
-
-									+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
-									+ "-<i>Compra:</i> " + titulo + "<br>" 
-									+ "-<i>Tipo:</i> " + tipo + "<br>"
-									+ "-<i>Cantidad:</i> " + cantidad + "<br>"
-									+ "-<i>Descripción:</i> " + descripcion + "<br>"
-									+ "-<i>Comentario:</i> " + comentario + "<br><br>"
-
-									+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+		
+				for (User u : usuarios) {
+					String mail = u.getEmail();
+					if (mail.compareTo("") != 0) {
+						String[] mailEnviar = { mail };
+	
+						this.sendMail(mailEnviar, "COMPRA " + titulo + ": Finalizada",
+								"Le notificamos que la compra " + titulo + ", solicitada por " + solicitante + 
+								", ha sido finalizada con éxito. <br><br>"
+	
+										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" 
+										+ "-<i>Compra:</i> " + titulo + "<br>" 
+										+ "-<i>Tipo:</i> " + tipo + "<br>"
+										+ "-<i>Cantidad:</i> " + cantidad + "<br>"
+										+ "-<i>Descripción:</i> " + descripcion + "<br>"
+										+ "-<i>Comentario:</i> " + comentario + "<br><br>"
+	
+										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+					}
 				}
 			}
 		}

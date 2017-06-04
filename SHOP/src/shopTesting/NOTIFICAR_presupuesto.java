@@ -72,22 +72,22 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 				for (int i = 0; i < gruposNotificar.length; i++) {
 					usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-				}
-
-				for (User u : usuarios) {
-					String mail = u.getEmail();
-					if (mail.compareTo("") != 0) {
-						String[] mailEnviar = { mail };
-						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en espera de ser aprobada. ",
-								"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
-										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
-										+ "-<i>Tipo:</i> " + tipo + "<br>" + "-<i>Cantidad:</i> " + cantidad + "<br>"
-										+ "-<i>Descripción:</i> " + descripcion + "<br>" + "-<i>Comentario:</i> "
-										+ comentario + "<br><br>" + "-Solicitado por " + solicitante + "<br><br>"
-
-										+ "<i>Comentario de administración: </i>" + comentarioDir + "<br><br><br>"
-
-										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+		 		
+					for (User u : usuarios) {
+						String mail = u.getEmail();
+						if (mail.compareTo("") != 0) {
+							String[] mailEnviar = { mail };
+							this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": en espera de ser aprobada. ",
+									"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
+											+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
+											+ "-<i>Tipo:</i> " + tipo + "<br>" + "-<i>Cantidad:</i> " + cantidad + "<br>"
+											+ "-<i>Descripción:</i> " + descripcion + "<br>" + "-<i>Comentario:</i> "
+											+ comentario + "<br><br>" + "-Solicitado por " + solicitante + "<br><br>"
+	
+											+ "<i>Comentario de administración: </i>" + comentarioDir + "<br><br><br>"
+	
+											+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+						}
 					}
 				}
 			}
@@ -102,26 +102,26 @@ public class NOTIFICAR_presupuesto extends ApiaAbstractClass {
 
 				for (int i = 0; i < gruposNotificar.length; i++) {
 					usuarios = this.getGroup(gruposNotificar[i]).getUsers();
-				}
-
-				for (User u : usuarios) {
-					String mail = u.getEmail();
-					if (mail.compareTo("") != 0) {
-						String[] mailEnviar = { mail };
-
-						this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": nuevo presupuesto",
-								"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
-
-										+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
-										+ "-<i>Tipo:</i> " + tipo + "<br>" + "-Solicitado por " + solicitante
-										+ "<br><br>"
-
-										+ "<h3>INFORMACIÓN DEL PRESUPUESTO </h3>" + "-<i>Proveedor: <i>" + proveedor
-										+ "<br>" + "-<i>Monto: <i>" + monto + " (Incluye IVA) <br>"
-										+ "-<i>Cumplimiento: <i>" + cumplimiento + "<br>" + "-<i>Comentario:<i> "
-										+ comentario + "<br><br><br>"
-
-										+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+				
+					for (User u : usuarios) {
+						String mail = u.getEmail();
+						if (mail.compareTo("") != 0) {
+							String[] mailEnviar = { mail };
+	
+							this.sendMail(mailEnviar, "TESTING | COMPRA " + titulo + ": nuevo presupuesto",
+									"Le notificamos que hay una compra en espera de ser aprobada. <br><br>"
+	
+											+ "<h3> INFORMACIÓN DE LA COMPRA </h3>" + "-<i>Compra:</i> " + titulo + "<br>"
+											+ "-<i>Tipo:</i> " + tipo + "<br>" + "-Solicitado por " + solicitante
+											+ "<br><br>"
+	
+											+ "<h3>INFORMACIÓN DEL PRESUPUESTO </h3>" + "-<i>Proveedor: <i>" + proveedor
+											+ "<br>" + "-<i>Monto: <i>" + monto + " (Incluye IVA) <br>"
+											+ "-<i>Cumplimiento: <i>" + cumplimiento + "<br>" + "-<i>Comentario:<i> "
+											+ comentario + "<br><br><br>"
+	
+											+ "<font color=gray>Este e-mail se ha generado automáticamente. Por favor, no responda a este e-mail.</font>");
+						}
 					}
 				}
 			}
