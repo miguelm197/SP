@@ -18,7 +18,7 @@ public class CargarSolicitate extends ApiaAbstractClass {
 
 		Attribute solicitante = this.getCurrentEntity().getAttribute("SH_SOLICITANTE_INGRESO_COMPRA_STR");
 
-		PossibleValue pos1 = new PossibleValue("Karen", "Karen");
+		PossibleValue pos1 = new PossibleValue("Administración", "Administración");
 		PossibleValue pos2 = new PossibleValue("Carla", "Carla");
 		PossibleValue pos3 = new PossibleValue("Marcos", "Marcos");
 		PossibleValue pos4 = new PossibleValue("José", "José");
